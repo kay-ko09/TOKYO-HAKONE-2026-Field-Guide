@@ -45,3 +45,40 @@ figure figcaption{padding:7px 9px 8px;font-size:9px;font-weight:650;letter-spaci
   .photo-spot-grid{grid-template-columns:1fr;gap:7px}.photo-spot{padding:11px 12px}.photo-spot b{font-size:13px}.photo-spot p{font-size:11.5px!important}
   .card:has(.feature){margin-top:4px;margin-bottom:25px}
 }
+
+/* v12 — mobile photo sizing: compact, readable, thumb-first */
+@media(max-width:700px){
+  /* Keep photos from swallowing the whole phone screen. */
+  .editorial-photo,.photo-wide,.photo-food,.photo-small,.photo-cinematic,.photo-portrait{
+    margin:10px 0 11px;
+    width:100%;
+    max-width:100%;
+    border-radius:8px;
+  }
+  .photo-wide img,.photo-cinematic img,.photo-food img,.photo-small img,.photo-portrait img{
+    width:100%;
+    height:180px;
+    aspect-ratio:auto;
+    object-fit:cover;
+  }
+  /* Important visual stops get a little more breathing room, but still fit on one screen. */
+  .feature img,.eva-photo img{height:210px}
+  /* Posters should remain legible and uncropped. */
+  .photo-poster{
+    width:min(72vw,280px);
+    margin:10px auto 12px;
+  }
+  .photo-poster img{width:100%;height:auto;aspect-ratio:auto;object-fit:contain}
+  /* Tokyo Tower portrait becomes a compact crop instead of a very tall image. */
+  .tower-main img{height:230px;object-fit:cover;object-position:center 55%}
+  /* Give the actual travel information more visual priority than photos. */
+  figure figcaption{font-size:8px;line-height:1.35;padding:6px 7px}
+  .content h3{margin-top:2px}
+  .quick-info,.spec-grid,.photo-note{margin-top:9px}
+}
+@media(max-width:390px){
+  .photo-wide img,.photo-cinematic img,.photo-food img,.photo-small img,.photo-portrait img{height:160px}
+  .feature img,.eva-photo img{height:190px}
+  .tower-main img{height:210px}
+  .photo-poster{width:min(76vw,260px)}
+}
