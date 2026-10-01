@@ -1,11 +1,12 @@
-# TOKYO / HAKONE FIELD GUIDE v10
+# Tokyo / Hakone 2026 Field Guide — v13 Mobile Reading Edition
 
-v10 keeps the v9 layout and itinerary information, but unifies the typography system for better mobile readability.
+This version prioritizes actual on-the-street phone readability:
+- larger body, route, metadata and button text
+- much shorter header
+- transit details collapsed by default
+- transit steps become one-column blocks on phones
+- smaller photos so text stays dominant
+- larger tap targets
+- less visual density and fewer tiny labels
 
-## What changed
-- One unified CJK-first sans-serif stack across Chinese, Japanese, English and numerals.
-- Removed the visual clash between condensed headings, monospace labels and body copy.
-- Standardized font weights, line heights, letter spacing and numeric alignment.
-- Kept route cards, itinerary structure and v9 content unchanged.
-
-Upload `index.html`, `style.css`, `script.js` and the `images` folder to the repository root.
+Upload the full folder contents to the GitHub Pages repository root.

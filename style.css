@@ -82,3 +82,37 @@ figure figcaption{padding:7px 9px 8px;font-size:9px;font-weight:650;letter-spaci
   .tower-main img{height:210px}
   .photo-poster{width:min(76vw,260px)}
 }
+
+/* v13 — true mobile reading mode: readability before decoration */
+@media(max-width:700px){
+  html{-webkit-text-size-adjust:100%}
+  body{font-size:16px;line-height:1.72;background:#f6f3ed;color:#171616}
+  .hero{min-height:0}.hero-copy{padding:18px 16px 16px}.hero-copy:after,.system-row,.hero-tags{display:none}
+  .eyebrow{margin:0 0 5px;font-size:11px;letter-spacing:.05em}
+  h1{font-size:34px;line-height:1.02;letter-spacing:-.035em}
+  .subtitle{font-size:11px;margin:8px 0 0}.hero-brief{display:none}
+  .day-nav{scrollbar-width:none}.day-nav::-webkit-scrollbar{display:none}
+  .day-btn{min-width:104px;padding:11px 10px;gap:6px;justify-content:center}.day-btn b{font-size:19px}.day-btn span{font-size:11px;letter-spacing:0}
+  main{padding:18px 10px 64px}
+  .mission-cover{min-height:0;padding:14px 4px;margin-bottom:12px}.mission-cover-copy span{font-size:11px}.mission-cover-copy h2{font-size:29px;line-height:1.08}.mission-cover-copy p{font-size:11px;margin-top:5px}
+  .briefing{margin-bottom:16px}.briefing span{font-size:11px;padding:10px 12px 0}.briefing b{font-size:14px;line-height:1.55;padding:5px 12px 11px}
+  .route-strip{font-size:10px;gap:5px;padding:0 2px 12px}
+  .card{padding:16px 14px;margin-bottom:14px;border-radius:11px;box-shadow:0 3px 12px rgba(33,27,23,.045)}
+  .time{font-size:13px;margin-bottom:3px;color:#5d4673}.content h3{font-size:22px;line-height:1.28;margin:0 0 7px}.content p{font-size:16px;line-height:1.72;color:#403c39;margin-bottom:9px}.content ul{font-size:15px;line-height:1.65}
+  .quick-info{grid-template-columns:72px 1fr;gap:7px 10px;padding:11px 0}.quick-info span{font-size:11px;line-height:1.5}.quick-info b{font-size:14px;line-height:1.55;font-weight:500}
+  .actions{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:12px}.actions a{font-size:12px;min-height:42px;padding:9px 10px;border-radius:9px;letter-spacing:0}
+  .transit-block{margin:0 0 16px;border-radius:10px;background:#ece8f0}.transit-block:before{font-size:10px;padding:10px 12px 0}.transit-block summary{font-size:15px;line-height:1.5;padding:6px 12px 12px}.transit-block summary span{min-width:58px}.transit-block summary:after{content:"＋";float:right;font-size:18px;font-weight:500}.transit-block[open] summary:after{content:"−"}
+  .route-steps{margin:4px 12px 2px}.route-steps>div{display:block;padding:12px 0}.route-steps small{display:inline-block;font-size:10px;line-height:1.2;padding:4px 7px;margin-bottom:7px;border-radius:999px;background:rgba(102,80,125,.09)}.route-steps b{display:block;font-size:15px;line-height:1.5}.route-steps p{grid-column:auto;font-size:14px!important;line-height:1.65!important;margin-top:5px!important}
+  .route-meta{padding:9px 12px 13px;gap:7px}.route-meta span{font-size:11px;line-height:1.35;padding:6px 8px}
+  .spec-grid{grid-template-columns:58px 1fr;font-size:13px;line-height:1.55;gap:7px 9px}.photo-note{grid-template-columns:64px 1fr}.photo-note b{font-size:11px}.photo-note span{font-size:13px}
+  .editorial-photo,.photo-wide,.photo-food,.photo-small,.photo-cinematic,.photo-portrait{margin:10px 0}
+  .photo-wide img,.photo-cinematic img,.photo-food img,.photo-small img,.photo-portrait img{height:145px}.feature img,.eva-photo img{height:165px}.tower-main img{height:180px}
+  figure figcaption{font-size:10px;line-height:1.45;padding:6px 8px;letter-spacing:.02em}
+  .photo-poster{width:min(62vw,230px)}
+  .photo-spot{padding:13px}.spot-no{font-size:11px}.photo-spot b{font-size:16px}.photo-spot em{font-size:12px}.photo-spot p{font-size:14px!important;line-height:1.6!important}.spot-map{font-size:12px;padding:5px 0}
+  .section-head{padding:12px;margin-bottom:14px}.section-head p{font-size:11px}.section-head h2{font-size:27px}.mini-card{padding:14px}.mini-card h3{font-size:20px}.mini-card li{font-size:15px;line-height:1.65}
+  footer{font-size:12px;padding:20px 12px 36px}
+}
+@media(max-width:390px){
+  main{padding-left:8px;padding-right:8px}.card{padding:15px 13px}.content p{font-size:15.5px}.photo-wide img,.photo-cinematic img,.photo-food img,.photo-small img,.photo-portrait img{height:132px}.feature img,.eva-photo img{height:150px}.tower-main img{height:165px}
+}
