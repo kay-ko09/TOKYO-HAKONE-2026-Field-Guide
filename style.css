@@ -116,3 +116,56 @@ figure figcaption{padding:7px 9px 8px;font-size:9px;font-weight:650;letter-spaci
 @media(max-width:390px){
   main{padding-left:8px;padding-right:8px}.card{padding:15px 13px}.content p{font-size:15.5px}.photo-wide img,.photo-cinematic img,.photo-food img,.photo-small img,.photo-portrait img{height:132px}.feature img,.eva-photo img{height:150px}.tower-main img{height:165px}
 }
+
+/* v14 — compact mobile mode: actually smaller text + smaller photos */
+@media (max-width:700px){
+  body{font-size:14px;line-height:1.58}
+  .hero-copy{padding:14px 14px 12px}
+  .eyebrow{font-size:9.5px}
+  h1{font-size:28px;line-height:1.0}
+  .subtitle{font-size:9.5px;margin-top:6px}
+  .day-btn{min-width:92px;padding:9px 8px;gap:4px}
+  .day-btn b{font-size:17px}.day-btn span{font-size:9.5px}
+  main{padding:14px 8px 56px}
+  .mission-cover{padding:10px 2px;margin-bottom:10px}
+  .mission-cover-copy span{font-size:9.5px}
+  .mission-cover-copy h2{font-size:25px}
+  .mission-cover-copy p{font-size:9.5px}
+  .briefing{margin-bottom:12px}.briefing span{font-size:9.5px;padding:8px 10px 0}.briefing b{font-size:12.5px;padding:4px 10px 9px}
+  .route-strip{font-size:8.5px;gap:4px;padding-bottom:10px}
+  .card{padding:12px 11px;margin-bottom:11px;border-radius:9px}
+  .time{font-size:10.5px;margin-bottom:2px}
+  .content h3{font-size:19px;line-height:1.22;margin-bottom:5px}
+  .content p{font-size:13px;line-height:1.56;margin-bottom:7px}
+  .content ul{font-size:12.5px;line-height:1.52}
+  .quick-info{grid-template-columns:60px 1fr;gap:5px 8px;padding:8px 0}
+  .quick-info span{font-size:9.5px}.quick-info b{font-size:12px;line-height:1.45}
+  .actions{gap:6px;margin-top:9px}.actions a{font-size:10px;min-height:34px;padding:7px 8px;border-radius:7px}
+  .transit-block{margin-bottom:11px;border-radius:8px}
+  .transit-block:before{font-size:8.5px;padding:8px 10px 0}
+  .transit-block summary{font-size:12.5px;line-height:1.4;padding:5px 10px 9px}
+  .transit-block summary span{min-width:50px}.transit-block summary:after{font-size:15px}
+  .route-steps{margin:2px 10px}
+  .route-steps>div{padding:9px 0}.route-steps small{font-size:8.5px;padding:3px 6px;margin-bottom:5px}
+  .route-steps b{font-size:12.5px;line-height:1.4}.route-steps p{font-size:11.5px!important;line-height:1.5!important;margin-top:3px!important}
+  .route-meta{padding:7px 10px 10px;gap:5px}.route-meta span{font-size:9.5px;padding:5px 6px}
+  .spec-grid{grid-template-columns:50px 1fr;font-size:11px;gap:5px 7px}
+  .photo-note{grid-template-columns:56px 1fr}.photo-note b{font-size:9.5px}.photo-note span{font-size:11px}
+  .editorial-photo,.photo-wide,.photo-food,.photo-small,.photo-cinematic,.photo-portrait{margin:7px 0 8px;border-radius:7px}
+  .photo-wide img,.photo-cinematic img,.photo-food img,.photo-small img,.photo-portrait img{height:108px!important;object-fit:cover}
+  .feature img,.eva-photo img{height:126px!important}
+  .tower-main img{height:140px!important}
+  .photo-poster{width:min(54vw,190px);margin:8px auto 9px}
+  figure figcaption{font-size:8.5px;line-height:1.35;padding:5px 6px}
+  .photo-spot-grid{gap:5px}.photo-spot{padding:10px}.spot-no{font-size:9px}.photo-spot b{font-size:13.5px}.photo-spot em{font-size:10px}.photo-spot p{font-size:11.5px!important;line-height:1.5!important}.spot-map{font-size:10px}
+  .section-head{padding:9px;margin-bottom:10px}.section-head p{font-size:9.5px}.section-head h2{font-size:23px}
+  .mini-card{padding:11px}.mini-card h3{font-size:17px}.mini-card li{font-size:12.5px;line-height:1.5}
+  footer{font-size:10.5px;padding:16px 10px 28px}
+}
+@media (max-width:390px){
+  h1{font-size:26px}.content h3{font-size:18px}.content p{font-size:12.5px}
+  .photo-wide img,.photo-cinematic img,.photo-food img,.photo-small img,.photo-portrait img{height:96px!important}
+  .feature img,.eva-photo img{height:114px!important}
+  .tower-main img{height:126px!important}
+  .photo-poster{width:min(52vw,178px)}
+}
