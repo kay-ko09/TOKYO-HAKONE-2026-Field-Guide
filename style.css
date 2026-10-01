@@ -1,0 +1,31 @@
+:root{
+  --bg:#0f1113;
+  --panel:#171a1d;
+  --panel-2:#1d2125;
+  --text:#f3f5f7;
+  --muted:#a6adb4;
+  --line:#2d3339;
+  --accent:#d7ff00;
+  --orange:#ff7a00;
+  --red:#ff4b55;
+  --blue:#67b7ff;
+  --purple:#a98bff;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:"Noto Sans TC",system-ui,sans-serif;line-height:1.6}
+a{color:inherit}
+.hero{padding:42px 20px 28px;max-width:1000px;margin:auto;border-bottom:1px solid var(--line)}
+.eyebrow{font-family:"IBM Plex Mono",monospace;color:var(--accent);font-size:12px;letter-spacing:.15em}
+h1{font-family:"IBM Plex Mono",monospace;font-size:clamp(48px,10vw,110px);line-height:.86;margin:18px 0 16px;letter-spacing:-.05em}
+h1 span{color:var(--muted)}
+.subtitle{color:var(--muted);margin:0 0 16px}
+.hero-tags{display:flex;gap:8px;flex-wrap:wrap}.hero-tags span{border:1px solid var(--line);padding:6px 9px;font-family:"IBM Plex Mono",monospace;font-size:12px;background:var(--panel)}
+.day-nav{position:sticky;top:0;z-index:20;display:flex;gap:8px;padding:10px;overflow:auto;background:rgba(15,17,19,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.day-btn{border:1px solid var(--line);background:var(--panel);color:var(--text);padding:10px 14px;white-space:nowrap;font-family:"IBM Plex Mono",monospace;cursor:pointer}.day-btn.active{background:var(--accent);color:#0a0a0a;border-color:var(--accent)}
+main{max-width:920px;margin:auto;padding:26px 16px 70px}.day-section{display:none}.day-section.active{display:block}.section-head{margin-bottom:22px;padding:18px;border-left:4px solid var(--accent);background:linear-gradient(90deg,rgba(215,255,0,.08),transparent)}.section-head.nerv{border-color:var(--purple);background:linear-gradient(90deg,rgba(169,139,255,.12),transparent)}.section-head p{font-family:"IBM Plex Mono",monospace;color:var(--muted);margin:0 0 6px}.section-head h2{margin:0;font-size:clamp(24px,4vw,42px);line-height:1.15}
+.card{display:grid;grid-template-columns:92px 1fr;gap:18px;padding:20px 0;border-top:1px solid var(--line)}.card:last-child{border-bottom:1px solid var(--line)}.time{font-family:"IBM Plex Mono",monospace;color:var(--accent);font-weight:600;font-size:14px;letter-spacing:.04em}.content h3{margin:0 0 7px;font-size:22px}.content p{margin:0 0 9px;color:#d5d9dd}.content ul{margin:8px 0 0;padding-left:18px;color:#d5d9dd}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.actions a{display:inline-block;text-decoration:none;border:1px solid var(--line);background:var(--panel);padding:8px 10px;font-size:13px;font-family:"IBM Plex Mono",monospace}.actions a:hover{border-color:var(--accent)}.actions .map{border-color:#3f4b55}
+.booked{background:linear-gradient(90deg,rgba(103,183,255,.08),transparent)}.booked .time{color:var(--blue)}.highlight{background:linear-gradient(90deg,rgba(169,139,255,.10),transparent)}.highlight .time{color:var(--purple)}.conditional{background:linear-gradient(90deg,rgba(255,122,0,.08),transparent)}.conditional .time{color:var(--orange)}.optional{opacity:.88}.transit .time{color:#9fd3ff}.taxi{background:linear-gradient(90deg,rgba(103,183,255,.05),transparent)}.danger{background:linear-gradient(90deg,rgba(255,75,85,.14),transparent);border-left:3px solid var(--red);padding-left:14px}.danger .time{color:var(--red)}.warning{color:#ffd089!important;font-weight:600}.exit{color:var(--accent)!important;font-weight:700}
+.grid.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-bottom:20px}.mini-card{background:var(--panel);border:1px solid var(--line);padding:16px}.mini-card h3{margin:0 0 8px}.mini-card ul{margin:0;padding-left:18px;color:#d5d9dd}
+footer{max-width:920px;margin:auto;padding:28px 16px 50px;border-top:1px solid var(--line);font-family:"IBM Plex Mono",monospace;color:var(--muted)}footer .small{font-size:12px}
+@media(max-width:640px){.hero{padding-top:28px}.card{grid-template-columns:1fr;gap:6px}.time{font-size:13px}.content h3{font-size:20px}.grid.two{grid-template-columns:1fr}.day-nav{justify-content:flex-start}.section-head{padding:14px}.actions a{flex:1;text-align:center;min-width:120px}}
