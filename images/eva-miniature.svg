@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700">
+  <rect width="1200" height="700" fill="#110915"/>
+  <g fill="#281b38"><rect x="60" y="330" width="160" height="250"/><rect x="250" y="250" width="120" height="330"/><rect x="410" y="360" width="170" height="220"/><rect x="620" y="210" width="140" height="370"/><rect x="800" y="300" width="260" height="280"/></g>
+  <g stroke="#b6ff00" stroke-width="3" fill="none" opacity="0.7"><path d="M100 180L1100 180M100 220L1100 220"/><path d="M160 90V270M1040 90V270"/></g>
+  <g fill="#ff5a1f"><polygon points="0,650 320,650 420,700 0,700"/><polygon points="1200,0 1000,0 920,70 1200,70"/></g>
+  <g fill="#f0e7d5" opacity="0.85"><rect x="80" y="90" width="300" height="8"/><rect x="80" y="116" width="160" height="5"/></g>
+</svg>

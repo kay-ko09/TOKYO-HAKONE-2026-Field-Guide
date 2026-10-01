@@ -3,189 +3,161 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#111315" />
-  <title>TOKYO / HAKONE 2026 — Field Guide</title>
+  <meta name="theme-color" content="#120816" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <title>TOKYO / HAKONE 2026 — Field Operation Guide</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+TC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+TC:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div class="scanlines" aria-hidden="true"></div>
   <header class="hero">
-    <div class="eyebrow">KAY'S TOKYO FIELD GUIDE / 2026</div>
-    <h1>TOKYO<br><span>/ HAKONE</span></h1>
-    <p class="subtitle">2026.10.23 — 10.28 · HAKONE / TOKYO / TOKYO-III</p>
-    <div class="hero-tags">
-      <span>EVA</span><span>COFFEE</span><span>FOOD</span><span>ART</span><span>SOFUBI</span><span>PLANTS</span>
+    <img class="hero-art" src="images/hero-grid.svg" alt="Original sci-fi field guide illustration">
+    <div class="hero-shade"></div>
+    <div class="hero-copy">
+      <div class="system-row"><span>FIELD OPERATION</span><span>STATUS / ACTIVE</span><span>UNIT / KAY-01</span></div>
+      <p class="eyebrow">TOKYO–HAKONE / 2026.10.23—10.28</p>
+      <h1>TOKYO<br><span>FIELD GUIDE</span></h1>
+      <p class="subtitle">HAKONE / TOKYO / TOKYO-III</p>
+      <div class="hero-tags"><span>EVA</span><span>COFFEE</span><span>FOOD</span><span>ART</span><span>SOFUBI</span><span>PLANTS</span></div>
+      <div class="hero-brief"><b>MISSION</b><span>箱根第三新東京市巡禮 × 東京兩日高密度自由行</span></div>
     </div>
   </header>
 
   <nav class="day-nav" aria-label="日期導覽">
-    <button class="day-btn active" data-day="day3">10/25 EVA</button>
-    <button class="day-btn" data-day="day4">10/26 TOKYO</button>
-    <button class="day-btn" data-day="day5">10/27 TOKYO</button>
-    <button class="day-btn" data-day="info">INFO</button>
+    <button class="day-btn active" data-day="day3"><b>03</b><span>10/25 EVA</span></button>
+    <button class="day-btn" data-day="day4"><b>04</b><span>10/26 TOKYO</span></button>
+    <button class="day-btn" data-day="day5"><b>05</b><span>10/27 TOKYO</span></button>
+    <button class="day-btn" data-day="info"><b>Σ</b><span>INFO</span></button>
   </nav>
+
+  <section class="ops-console" aria-label="Operation status console">
+    <div class="ops-kicker"><span>MAGI / ROUTE CONTROL</span><span id="tokyoClock">TOKYO --:--:--</span></div>
+    <div class="ops-grid">
+      <div class="ops-cell ops-progress">
+        <small>MISSION PROGRESS</small>
+        <div class="progress-track"><i id="tripProgressBar"></i></div>
+        <strong id="tripProgressText">STANDBY</strong>
+      </div>
+      <div class="ops-cell ops-next">
+        <small>NEXT TARGET</small>
+        <strong id="nextTarget">DEPARTURE / TOKYO</strong>
+        <span id="nextMeta">2026.10.23</span>
+      </div>
+      <div class="ops-cell ops-countdown">
+        <small>COUNTDOWN</small>
+        <strong id="missionCountdown">--:--:--</strong>
+        <span id="countdownLabel">UNTIL NEXT OPERATION</span>
+      </div>
+    </div>
+    <div class="ops-footer">
+      <div class="warning-ticker"><b>CAUTION</b><span>KEEP HARD-STOPS / PRIORITIZE EVA CORE MISSIONS / VERIFY LIVE TRANSIT BEFORE MOVING</span></div>
+      <div class="theme-switch" aria-label="Interface mode">
+        <button class="theme-btn active" data-theme="unit01">UNIT-01</button>
+        <button class="theme-btn" data-theme="alert">ALERT</button>
+      </div>
+    </div>
+  </section>
 
   <main>
     <section id="day3" class="day-section active">
-      <div class="section-head nerv">
-        <p>DAY 03 · HAKONE / TOKYO-III</p>
-        <h2>第三新東京市實景巡禮</h2>
-        <p>旅行團原定：大涌谷 → 蘆之湖海盜船 → 箱根町 → 台場</p>
+      <div class="mission-cover">
+        <img src="images/hakone.svg" alt="Hakone original illustration">
+        <div class="mission-cover-copy"><span>DAY 03</span><h2>HAKONE / TOKYO-III</h2><p>第三新東京市實景巡禮</p></div>
       </div>
+      <div class="briefing"><span>TOUR ROUTE</span><b>大涌谷 → 蘆之湖海盜船 → 箱根町 → 台場</b></div>
 
       <article class="card highlight">
         <div class="time">SHOT 01</div>
-        <div class="content">
-          <h3>大涌谷</h3>
-          <p>TV 版第 4 話相關箱根場景。優先拍荒地、白煙、山體，不要把商店或欄杆放進畫面。</p>
-          <ul>
-            <li>1×：山體 2/3、天空 1/3</li>
-            <li>2×：人物置於畫面下方 1/4，背對鏡頭</li>
-            <li>座標：35.241861, 139.020806</li>
-          </ul>
-          <div class="actions"><a class="map" href="https://maps.google.com/?q=35.241861,139.020806" target="_blank" rel="noopener">Google Maps</a></div>
-        </div>
+        <div class="content"><h3>大涌谷</h3><p>TV 版第 4 話相關箱根場景。優先拍荒地、白煙、山體，不要把商店或欄杆放進畫面。</p><div class="spec-grid"><span>1×</span><em>山體 2/3・天空 1/3</em><span>2×</span><em>人物下方 1/4・背對鏡頭</em><span>GPS</span><em>35.241861, 139.020806</em></div><div class="actions"><a class="map" href="https://maps.google.com/?q=35.241861,139.020806" target="_blank" rel="noopener">OPEN MAP</a></div></div>
       </article>
-
-      <article class="card">
-        <div class="time">SHOT 02</div>
-        <div class="content">
-          <h3>元箱根・蘆之湖</h3>
-          <p>第三新東京市主要地理意象。湖面、山體、少量人造物，陰天反而更有 EVA 氣氛。</p>
-          <div class="actions"><a class="map" href="https://maps.google.com/?q=Motohakone+Port" target="_blank" rel="noopener">Google Maps</a></div>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="time">SHOT 03</div>
-        <div class="content">
-          <h3>二子山方向 / ヤシマ作戦</h3>
-          <p>2×～3× 長焦，把山體壓到湖面後方。不要人物，讓地形成為主角。</p>
-        </div>
-      </article>
-
-      <article class="card conditional">
-        <div class="time">IF POSSIBLE</div>
-        <div class="content">
-          <h3>箱根湯本 えゔぁ屋</h3>
-          <p>若領隊允許 15～20 分鐘停留，優先前往。目標：箱根限定 EVA 商品、EVA Soft Cream、L.C.L Drink。</p>
-          <div class="actions">
-            <a href="https://www.evastore.jp/" target="_blank" rel="noopener">Official</a>
-            <a class="map" href="https://maps.google.com/?q=Evangelion+Store+Hakone" target="_blank" rel="noopener">Google Maps</a>
-          </div>
-        </div>
-      </article>
+      <article class="card"><div class="time">SHOT 02</div><div class="content"><h3>元箱根・蘆之湖</h3><p>第三新東京市主要地理意象。湖面、山體、少量人造物，陰天反而更有 EVA 氣氛。</p><div class="actions"><a class="map" href="https://maps.google.com/?q=Motohakone+Port" target="_blank" rel="noopener">OPEN MAP</a></div></div></article>
+      <article class="card"><div class="time">SHOT 03</div><div class="content"><h3>二子山方向 / ヤシマ作戦</h3><p>2×～3× 長焦，把山體壓到湖面後方。不要人物，讓地形成為主角。</p></div></article>
+      <article class="card conditional"><div class="time">IF POSSIBLE</div><div class="content"><h3>箱根湯本 えゔぁ屋</h3><p>若領隊允許 15～20 分鐘停留，優先前往。目標：箱根限定 EVA 商品、EVA Soft Cream、L.C.L Drink。</p><div class="actions"><a href="https://www.evastore.jp/" target="_blank" rel="noopener">OFFICIAL</a><a class="map" href="https://maps.google.com/?q=Evangelion+Store+Hakone" target="_blank" rel="noopener">MAP</a></div></div></article>
     </section>
 
     <section id="day4" class="day-section">
-      <div class="section-head">
-        <p>DAY 04 · 10/26 MON</p>
-        <h2>GINZA / YURAKUCHO / MARUNOUCHI / ROPPONGI / TAKANAWA / SHINJUKU</h2>
+      <div class="mission-cover city">
+        <img src="images/tokyo.svg" alt="Tokyo original illustration">
+        <div class="mission-cover-copy"><span>DAY 04 · 10/26 MON</span><h2>GINZA → SHINJUKU</h2><p>SOFUBI / ART / PLANTS / FOOD</p></div>
       </div>
+      <div class="route-strip"><span>TSUKIJI</span><i></i><span>GINZA</span><i></i><span>YURAKUCHO</span><i></i><span>MARUNOUCHI</span><i></i><span>NOGIZAKA</span><i></i><span>TAKANAWA</span><i></i><span>SHINJUKU</span></div>
 
-      <article class="card booked">
-        <div class="time">08:00</div>
-        <div class="content"><h3>築地 鮨 山治</h3><p>早餐壽司 · 2 人 · 已預約</p><div class="actions"><a href="https://tsukiji-yamaharu.owst.jp/" target="_blank" rel="noopener">Official</a><a class="map" href="https://maps.google.com/?q=Tsukiji+Sushi+Yamaharu" target="_blank" rel="noopener">Maps</a></div></div>
-      </article>
-
-      <article class="card"><div class="time">09:30</div><div class="content"><h3>GLITCH COFFEE GINZA</h3><p>精品咖啡。築地後步行前往。</p><div class="actions"><a class="map" href="https://maps.google.com/?q=Glitch+Coffee+Ginza" target="_blank" rel="noopener">Maps</a></div></div></article>
-
-      <article class="card booked"><div class="time">11:10</div><div class="content"><h3>KAGEMARU NIGHTMARE DX — SESSION 01</h3><p>已購票 · 先行票 mini sofubi #1</p><div class="actions"><a href="https://hakabanogarou.jp/kagemarunightmaredx" target="_blank" rel="noopener">Official</a></div></div></article>
-
-      <article class="card conditional"><div class="time">11:30</div><div class="content"><h3>RAFLUM POP-UP</h3><p>阪急 Men's Tokyo 1F。10/20 再確認 10/26 是否仍舉辦；若第一場 KAGEMARU 延誤，直接略過。</p><div class="actions"><a href="https://raflum.com/" target="_blank" rel="noopener">Official</a></div></div></article>
-
+      <article class="card booked"><div class="time">08:00</div><div class="content"><h3>築地 鮨 山治</h3><p>早餐壽司 · 2 人 · 已預約</p><div class="actions"><a href="https://tsukiji-yamaharu.owst.jp/" target="_blank" rel="noopener">OFFICIAL</a><a class="map" href="https://maps.google.com/?q=Tsukiji+Sushi+Yamaharu" target="_blank" rel="noopener">MAP</a></div></div></article>
+      <article class="card"><div class="time">09:30</div><div class="content"><h3>GLITCH COFFEE GINZA</h3><p>築地後步行前往。第一杯精品咖啡。</p><div class="actions"><a class="map" href="https://maps.google.com/?q=Glitch+Coffee+Ginza" target="_blank" rel="noopener">MAP</a></div></div></article>
+      <article class="card booked"><div class="time">11:10</div><div class="content"><h3>KAGEMARU NIGHTMARE DX — SESSION 01</h3><p>已購票 · 先行票 mini sofubi #1</p><div class="actions"><a href="https://hakabanogarou.jp/kagemarunightmaredx" target="_blank" rel="noopener">OFFICIAL</a></div></div></article>
+      <article class="card conditional"><div class="time">11:30</div><div class="content"><h3>RAFLUM POP-UP</h3><p>阪急 Men's Tokyo 1F。10/20 再確認；第一場若拖延就直接略過。</p><div class="actions"><a href="https://raflum.com/" target="_blank" rel="noopener">OFFICIAL</a></div></div></article>
       <article class="card booked"><div class="time">12:00</div><div class="content"><h3>KAGEMARU NIGHTMARE DX — SESSION 02</h3><p>已購票 · 先行票 mini sofubi #2</p></div></article>
+      <article class="card"><div class="time">12:25</div><div class="content"><h3>辻田 銀座</h3><p>午餐 · つけ麺 / 拉麵</p><div class="actions"><a class="map" href="https://maps.google.com/?q=Tsujita+Ginza" target="_blank" rel="noopener">MAP</a></div></div></article>
 
-      <article class="card"><div class="time">12:25</div><div class="content"><h3>辻田 銀座</h3><p>午餐 · つけ麺 / 拉麵</p><div class="actions"><a class="map" href="https://maps.google.com/?q=Tsujita+Ginza" target="_blank" rel="noopener">Maps</a></div></div></article>
+      <div class="feature-image"><img src="images/food.svg" alt="Original food illustration"><div><span>FOOD / SWEETS</span><b>BUTTER + JIICHIRO</b></div></div>
+      <article class="card"><div class="time">13:15</div><div class="content"><h3>BUTTER — Biei Pasture Dairy Farm</h3><p>丸之內大樓 B1F · Hot Cake + 美瑛放牧奶油 100g</p><div class="actions"><a href="https://biei-farm.co.jp/butter/" target="_blank" rel="noopener">OFFICIAL</a><a class="map" href="https://maps.google.com/?q=BUTTER+Biei+Marunouchi" target="_blank" rel="noopener">MAP</a></div></div></article>
+      <article class="card"><div class="time">14:10</div><div class="content"><h3>garage TOKYO</h3><p>丸之內大樓 4F · 植物 / 塊根 / 多肉 / 盆器</p><div class="actions"><a class="map" href="https://maps.google.com/?q=garage+TOKYO+Marunouchi" target="_blank" rel="noopener">MAP</a></div></div></article>
+      <article class="card"><div class="time">14:35</div><div class="content"><h3>治一郎 KITTE 丸之內</h3><p>布丁外帶回飯店。</p><div class="actions"><a href="https://jiichiro.com/" target="_blank" rel="noopener">OFFICIAL</a><a class="map" href="https://maps.google.com/?q=Jiichiro+KITTE+Marunouchi" target="_blank" rel="noopener">MAP</a></div></div></article>
 
-      <article class="card"><div class="time">13:15</div><div class="content"><h3>BUTTER — Biei Pasture Dairy Farm</h3><p>丸之內大樓 B1F · Hot Cake + 美瑛放牧奶油 100g</p><div class="actions"><a href="https://biei-farm.co.jp/butter/" target="_blank" rel="noopener">Official</a><a class="map" href="https://maps.google.com/?q=BUTTER+Biei+Marunouchi" target="_blank" rel="noopener">Maps</a></div></div></article>
-
-      <article class="card"><div class="time">14:10</div><div class="content"><h3>garage TOKYO</h3><p>丸之內大樓 4F · 植物 / 塊根 / 多肉 / 盆器</p><div class="actions"><a class="map" href="https://maps.google.com/?q=garage+TOKYO+Marunouchi" target="_blank" rel="noopener">Maps</a></div></div></article>
-
-      <article class="card"><div class="time">14:35</div><div class="content"><h3>治一郎 KITTE 丸之內</h3><p>買布丁外帶回飯店。</p><div class="actions"><a href="https://jiichiro.com/" target="_blank" rel="noopener">Official</a><a class="map" href="https://maps.google.com/?q=Jiichiro+KITTE+Marunouchi" target="_blank" rel="noopener">Maps</a></div></div></article>
-
-      <article class="card transit"><div class="time">14:50</div><div class="content"><h3>丸之內 → 乃木坂</h3><p>東京 Metro 千代田線：二重橋前 → 乃木坂</p><p class="exit">EXIT：乃木坂 6 號出口（直通國立新美術館）</p></div></article>
-
-      <article class="card"><div class="time">15:20</div><div class="content"><h3>國立新美術館</h3><p>約 1 小時 40 分。建築與展覽主行程。</p><div class="actions"><a href="https://www.nact.jp/english/" target="_blank" rel="noopener">Official</a><a class="map" href="https://maps.google.com/?q=The+National+Art+Center+Tokyo" target="_blank" rel="noopener">Maps</a></div></div></article>
-
-      <article class="card"><div class="time">17:40–18:40</div><div class="content"><h3>NEWoMan TAKANAWA / MILK TEA SERVICE</h3><p>North 4F · BEAMS CULTUART。逛設計選物、Zine、唱片；18:40 左右離開，保留前往新宿的緩衝。</p><div class="actions"><a href="https://www.newoman.jp/takanawa/" target="_blank" rel="noopener">NEWoMan</a><a href="https://www.beams.co.jp/shop/bct/" target="_blank" rel="noopener">BEAMS</a><a class="map" href="https://maps.google.com/?q=NEWoMan+Takanawa" target="_blank" rel="noopener">Maps</a></div></div></article>
-
-      <article class="card transit"><div class="time">18:40</div><div class="content"><h3>高輪 Gateway → 新宿</h3><p>JR 高輪ゲートウェイ站搭 <strong>山手線外回り（品川・澀谷方向）</strong>，直達 JR 新宿站，不用轉車；車程約 22 分鐘。抵達後走 <strong>南口</strong>，鳥茂距南口約 2 分鐘。</p><p class="exit">TARGET：19:10～19:20 抵達新宿南口</p><div class="actions"><a class="map" href="https://www.google.com/maps/dir/?api=1&origin=Takanawa+Gateway+Station&destination=Torishige+Shinjuku&travelmode=transit" target="_blank" rel="noopener">Route</a></div></div></article>
-
-      <article class="card conditional"><div class="time">19:30</div><div class="content"><h3>鳥茂 / TORISHIGE</h3><p>新宿老舖もつ焼き · 1949 年創業。地址：東京都渋谷区代々木2-6-5。目標預約 19:30；官方營業時間週一～六 17:00–24:00，<strong>現金付款</strong>。</p><ul><li>代表：ピーマン肉詰め</li><li>もつ焼き / 串燒</li><li>建議預留約 1.5～2 小時</li><li>出發前再確認是否有臨時休業</li></ul><div class="actions"><a href="https://torishige-shinjuku.com/ja" target="_blank" rel="noopener">Official</a><a class="map" href="https://maps.google.com/?q=鳥茂+東京都渋谷区代々木2-6-5" target="_blank" rel="noopener">Maps</a></div></div></article>
-
-      <article class="card transit"><div class="time">21:15–21:30</div><div class="content"><h3>新宿 → 大森 → HOTEL</h3><p>步行回 JR 新宿站 → 山手線往品川方向 → 品川轉京濱東北線至大森 → 步行回 Tmark。若仍有體力，再於大森站周邊買水果。</p><div class="actions"><a class="map" href="https://www.google.com/maps/dir/?api=1&origin=Torishige+Shinjuku&destination=Tmark+City+Hotel+Tokyo+Omori&travelmode=transit" target="_blank" rel="noopener">Route to Hotel</a></div></div></article>
-
-      <article class="card optional"><div class="time">LATE</div><div class="content"><h3>大森超市水果（有體力再去）</h3><p>優先找：Shine Muscat、新高梨／新興梨、富有柿／次郎柿、青森蘋果、早生蜜柑。鳥茂晚餐後不再把超市視為硬行程。</p></div></article>
+      <details class="transit-block" open><summary><span>14:50</span> 丸之內 → 乃木坂</summary><p>東京 Metro 千代田線：二重橋前 → 乃木坂</p><b>EXIT：乃木坂 6 號出口（直通國立新美術館）</b></details>
+      <article class="card"><div class="time">15:20</div><div class="content"><h3>國立新美術館</h3><p>約 1 小時 40 分。建築與展覽主行程。</p><div class="actions"><a href="https://www.nact.jp/english/" target="_blank" rel="noopener">OFFICIAL</a><a class="map" href="https://maps.google.com/?q=The+National+Art+Center+Tokyo" target="_blank" rel="noopener">MAP</a></div></div></article>
+      <article class="card"><div class="time">17:40–18:40</div><div class="content"><h3>NEWoMan TAKANAWA / MILK TEA SERVICE</h3><p>North 4F · BEAMS CULTUART。逛設計選物、Zine、唱片。</p><div class="actions"><a href="https://www.newoman.jp/takanawa/" target="_blank" rel="noopener">NEWoMan</a><a href="https://www.beams.co.jp/shop/bct/" target="_blank" rel="noopener">BEAMS</a><a class="map" href="https://maps.google.com/?q=NEWoMan+Takanawa" target="_blank" rel="noopener">MAP</a></div></div></article>
+      <details class="transit-block"><summary><span>18:40</span> 高輪 Gateway → 新宿</summary><p>JR 高輪ゲートウェイ站搭山手線外回り（品川・澀谷方向）直達新宿，不用轉車，約 22 分鐘。</p><b>新宿站走南口；目標 19:10～19:20 抵達。</b><div class="actions"><a class="map" href="https://www.google.com/maps/dir/?api=1&origin=Takanawa+Gateway+Station&destination=Torishige+Shinjuku&travelmode=transit" target="_blank" rel="noopener">ROUTE</a></div></details>
+      <article class="card booked"><div class="time">19:30</div><div class="content"><h3>鳥茂 / TORISHIGE</h3><p>新宿老舖もつ焼き · 1949 年創業。目標預約 19:30。</p><div class="spec-grid"><span>PAY</span><em>現金</em><span>MUST</span><em>ピーマン肉詰め / もつ焼き</em><span>STAY</span><em>約 1.5～2 小時</em></div><div class="actions"><a href="https://torishige-shinjuku.com/ja" target="_blank" rel="noopener">OFFICIAL</a><a class="map" href="https://maps.google.com/?q=鳥茂+東京都渋谷区代々木2-6-5" target="_blank" rel="noopener">MAP</a></div></div></article>
+      <details class="transit-block"><summary><span>21:15+</span> 新宿 → 大森 → HOTEL</summary><p>JR 新宿站 → 山手線往品川 → 品川轉京濱東北線至大森 → 步行回 Tmark。</p><p>若還有體力，再在大森站周邊買水果。</p></details>
     </section>
 
     <section id="day5" class="day-section">
-      <div class="section-head nerv">
-        <p>DAY 05 · 10/27 TUE</p>
-        <h2>EVA / ASAKUSA / SKYTREE / KIYOSUMI / AZABUDAI</h2>
+      <div class="mission-cover eva">
+        <img src="images/eva-miniature.svg" alt="Original miniature city illustration">
+        <div class="mission-cover-copy"><span>DAY 05 · 10/27 TUE</span><h2>EVA / ASAKUSA / AZABUDAI</h2><p>SMALL WORLDS / SEIKO / BORDERLESS</p></div>
       </div>
+      <div class="route-strip"><span>SHIBUYA</span><i></i><span>NAKAMEGURO</span><i></i><span>ARIAKE</span><i></i><span>ASAKUSA</span><i></i><span>SKYTREE</span><i></i><span>KIYOSUMI</span><i></i><span>AZABUDAI</span></div>
 
-      <article class="card transit"><div class="time">07:25</div><div class="content"><h3>飯店 → 澀谷</h3><p>步行至 JR 大森站 → 京濱東北線至品川 → 山手線至澀谷。</p></div></article>
-
-      <article class="card"><div class="time">08:30</div><div class="content"><h3>かつお食堂</h3><p>早餐 · 鰹節ごはん</p><div class="actions"><a class="map" href="https://maps.google.com/?q=かつお食堂+渋谷" target="_blank" rel="noopener">Maps</a></div></div></article>
-
+      <details class="transit-block" open><summary><span>07:25</span> 飯店 → 澀谷</summary><p>步行至 JR 大森站 → 京濱東北線至品川 → 山手線至澀谷。</p></details>
+      <article class="card"><div class="time">08:30</div><div class="content"><h3>かつお食堂</h3><p>早餐 · 鰹節ごはん</p><div class="actions"><a class="map" href="https://maps.google.com/?q=かつお食堂+渋谷" target="_blank" rel="noopener">MAP</a></div></div></article>
       <article class="card transit taxi"><div class="time">09:05</div><div class="content"><h3>Taxi → Starbucks Reserve Roastery Tokyo</h3><p>從鶯谷町直接搭計程車，避免繞回澀谷站。</p></div></article>
-
-      <article class="card"><div class="time">09:20</div><div class="content"><h3>Starbucks Reserve Roastery Tokyo</h3><p>隈研吾建築＋Roastery 空間。約 45 分。</p><div class="actions"><a href="https://www.starbucks.co.jp/reserve/roastery/" target="_blank" rel="noopener">Official</a><a class="map" href="https://maps.google.com/?q=Starbucks+Reserve+Roastery+Tokyo" target="_blank" rel="noopener">Maps</a></div></div></article>
-
-      <article class="card transit"><div class="time">10:05</div><div class="content"><h3>中目黑 → SMALL WORLDS</h3><p>步行至中目黑站 → 東急東橫線至澀谷 → JR 埼京線／臨海線至國際展示場 → 步行約 9 分鐘。</p></div></article>
-
-      <article class="card booked highlight"><div class="time">11:00</div><div class="content"><h3>SMALL WORLDS — EVANGELION</h3><p>核心行程 · 至少 2 小時。Checklist：第三新東京市 / NERV / EVA / 發進場景 / 微縮模型 / 周邊。</p><div class="actions"><a href="https://smallworlds.jp/" target="_blank" rel="noopener">Official</a><a class="map" href="https://maps.google.com/?q=SMALL+WORLDS+Tokyo" target="_blank" rel="noopener">Maps</a></div></div></article>
-
-      <article class="card transit"><div class="time">13:00</div><div class="content"><h3>SMALL WORLDS → 淺草</h3><p>有明テニスの森 → 百合海鷗線至豐洲 → 有樂町線至銀座一丁目 → 步行轉銀座站 → 銀座線至田原町。</p><p class="warning">PLAN B：若 13:10 還沒離開 SMALL WORLDS，直接 Taxi 去本とさや。</p></div></article>
-
-      <article class="card"><div class="time">13:50</div><div class="content"><h3>本とさや / HONTOSAYA</h3><p>淺草老牌燒肉 · 午餐</p><div class="actions"><a href="https://hontosaya.com/" target="_blank" rel="noopener">Official</a><a class="map" href="https://maps.google.com/?q=Hontosaya+Asakusa" target="_blank" rel="noopener">Maps</a></div></div></article>
-
-      <article class="card"><div class="time">14:35</div><div class="content"><h3>龜十</h3><p>東京代表性銅鑼燒 · 外帶</p><div class="actions"><a class="map" href="https://maps.google.com/?q=亀十+浅草" target="_blank" rel="noopener">Maps</a></div></div></article>
-
-      <article class="card"><div class="time">15:00</div><div class="content"><h3>FUGLEN ASAKUSA</h3><p>Nordic Roast · 20～25 分鐘即可。</p><div class="actions"><a href="https://fuglencoffee.jp/" target="_blank" rel="noopener">Official</a><a class="map" href="https://maps.google.com/?q=Fuglen+Asakusa" target="_blank" rel="noopener">Maps</a></div></div></article>
-
-      <article class="card transit"><div class="time">15:25</div><div class="content"><h3>淺草 → 東京晴空塔</h3><p>東武淺草站 → 東武 Skytree Line → とうきょうスカイツリー站（約 3 分鐘）。</p></div></article>
-
-      <article class="card"><div class="time">15:45</div><div class="content"><h3>TiCTAC 東京ソラマチ</h3><p>Solamachi 3F · 任務：SEIKO 限定錶</p><div class="actions"><a href="https://www.tictac-web.com/" target="_blank" rel="noopener">TiCTAC</a><a href="https://www.seikowatches.com/jp-ja/" target="_blank" rel="noopener">SEIKO</a><a class="map" href="https://maps.google.com/?q=TiCTAC+Tokyo+Solamachi" target="_blank" rel="noopener">Maps</a></div></div></article>
-
-      <article class="card transit"><div class="time">16:25</div><div class="content"><h3>押上 → 清澄白河</h3><p>押上（B3/A2）→ 半藏門線 Z14 → 清澄白河 Z11 → B2 出口。</p></div></article>
-
-      <article class="card optional"><div class="time">16:45</div><div class="content"><h3>Blue Bottle 清澄白河 Flagship</h3><p>若前段延誤，這站第一個刪。</p><div class="actions"><a href="https://store.bluebottlecoffee.jp/pages/kiyosumi" target="_blank" rel="noopener">Official</a><a class="map" href="https://maps.google.com/?q=Blue+Bottle+Kiyosumi+Shirakawa" target="_blank" rel="noopener">Maps</a></div></div></article>
-
+      <article class="card"><div class="time">09:20</div><div class="content"><h3>Starbucks Reserve Roastery Tokyo</h3><p>隈研吾建築＋Roastery 空間。約 45 分。</p><div class="actions"><a href="https://www.starbucks.co.jp/reserve/roastery/" target="_blank" rel="noopener">OFFICIAL</a><a class="map" href="https://maps.google.com/?q=Starbucks+Reserve+Roastery+Tokyo" target="_blank" rel="noopener">MAP</a></div></div></article>
+      <details class="transit-block"><summary><span>10:05</span> Roastery → SMALL WORLDS</summary><p>步行至中目黑 → 東急東橫線到澀谷 → JR 埼京線 / 臨海線直通至國際展示場 → 步行約 9 分鐘。</p></details>
+      <article class="card highlight"><div class="time">11:00–13:00</div><div class="content"><h3>SMALL WORLDS / EVANGELION</h3><p>核心行程。完整保留 2 小時，不壓縮。</p><div class="checklist"><label><input type="checkbox"> 第三新東京市</label><label><input type="checkbox"> NERV</label><label><input type="checkbox"> EVA 發進場景</label><label><input type="checkbox"> 周邊商品</label></div><div class="actions"><a href="https://smallworlds.jp/" target="_blank" rel="noopener">OFFICIAL</a><a class="map" href="https://maps.google.com/?q=SMALL+WORLDS+Tokyo" target="_blank" rel="noopener">MAP</a></div></div></article>
+      <details class="transit-block"><summary><span>13:00</span> SMALL WORLDS → 淺草</summary><p>有明テニスの森 → 百合海鷗線至豐洲 → 有樂町線至銀座一丁目 → 步行至銀座站 → 銀座線至田原町。</p><b>若 13:10 還沒離開 SMALL WORLDS：直接 Taxi → 本とさや。</b></details>
+      <article class="card"><div class="time">13:50</div><div class="content"><h3>本とさや / HONTOSAYA</h3><p>淺草老牌燒肉 · 午餐硬時間。</p><div class="actions"><a href="https://hontosaya.com/" target="_blank" rel="noopener">OFFICIAL</a><a class="map" href="https://maps.google.com/?q=Hontosaya+Asakusa" target="_blank" rel="noopener">MAP</a></div></div></article>
+      <article class="card"><div class="time">14:35</div><div class="content"><h3>龜十</h3><p>代表性銅鑼燒 · 外帶。</p><div class="actions"><a class="map" href="https://maps.google.com/?q=亀十+浅草" target="_blank" rel="noopener">MAP</a></div></div></article>
+      <article class="card"><div class="time">15:00</div><div class="content"><h3>FUGLEN ASAKUSA</h3><p>Nordic Roast · 約 20～25 分鐘。</p><div class="actions"><a href="https://fuglencoffee.jp/" target="_blank" rel="noopener">OFFICIAL</a><a class="map" href="https://maps.google.com/?q=Fuglen+Asakusa" target="_blank" rel="noopener">MAP</a></div></div></article>
+      <details class="transit-block"><summary><span>15:25</span> 淺草 → 東京晴空塔</summary><p>東武淺草站 → 東武 Skytree Line → とうきょうスカイツリー站，約 3 分鐘。</p></details>
+      <article class="card"><div class="time">15:45</div><div class="content"><h3>TiCTAC 東京ソラマチ</h3><p>Solamachi 3F · 任務：SEIKO 限定錶。</p><div class="actions"><a href="https://www.tictac-web.com/" target="_blank" rel="noopener">TiCTAC</a><a href="https://www.seikowatches.com/jp-ja/" target="_blank" rel="noopener">SEIKO</a><a class="map" href="https://maps.google.com/?q=TiCTAC+Tokyo+Solamachi" target="_blank" rel="noopener">MAP</a></div></div></article>
+      <details class="transit-block"><summary><span>16:25</span> 押上 → 清澄白河</summary><p>押上 B3/A2 → 半藏門線 Z14 → 清澄白河 Z11 → B2 出口。</p></details>
+      <article class="card optional"><div class="time">16:45</div><div class="content"><h3>Blue Bottle 清澄白河 Flagship</h3><p>如果任何前段行程延誤，這站第一個刪。</p><div class="actions"><a href="https://store.bluebottlecoffee.jp/pages/kiyosumi" target="_blank" rel="noopener">OFFICIAL</a><a class="map" href="https://maps.google.com/?q=Blue+Bottle+Kiyosumi+Shirakawa" target="_blank" rel="noopener">MAP</a></div></div></article>
       <article class="card danger"><div class="time">17:10</div><div class="content"><h3>HARD STOP</h3><p>無論如何離開清澄白河。</p></div></article>
+      <details class="transit-block"><summary><span>17:10</span> 清澄白河 → 麻布台</summary><p>半藏門線：清澄白河 Z11 → 水天宮前 Z10 → 地下連通人形町 H14 → 日比谷線 → 神谷町 H05。</p><b>EXIT：神谷町 5 號出口</b></details>
+      <article class="card booked"><div class="time">18:00</div><div class="content"><h3>RistoPizza by Napoli sta ca</h3><p>Azabudai Hills Tower Plaza 3F · 2 人 · 已預約。</p><div class="actions"><a class="map" href="https://maps.google.com/?q=RistoPizza+Azabudai" target="_blank" rel="noopener">MAP</a></div></div></article>
+      <article class="card"><div class="time">19:30</div><div class="content"><h3>teamLab Borderless</h3><p>Azabudai Hills Garden Plaza B B1 · 建議買 19:30 入場。</p><div class="actions"><a href="https://www.teamlab.art/e/tokyo/" target="_blank" rel="noopener">OFFICIAL</a><a class="map" href="https://maps.google.com/?q=teamLab+Borderless+Azabudai" target="_blank" rel="noopener">MAP</a></div></div></article>
 
-      <article class="card transit"><div class="time">17:10</div><div class="content"><h3>清澄白河 → 麻布台</h3><p>半藏門線：清澄白河 Z11 → 水天宮前 Z10 → 地下連通至人形町 H14 → 日比谷線 → 神谷町 H05。</p><p class="exit">EXIT：神谷町 5 號出口</p></div></article>
-
-      <article class="card booked"><div class="time">18:00</div><div class="content"><h3>RistoPizza by Napoli sta ca</h3><p>Azabudai Hills Tower Plaza 3F · 2 人 · 已預約</p><div class="actions"><a class="map" href="https://maps.google.com/?q=RistoPizza+Azabudai" target="_blank" rel="noopener">Maps</a></div></div></article>
-
-      <article class="card"><div class="time">19:30</div><div class="content"><h3>teamLab Borderless</h3><p>Azabudai Hills Garden Plaza B B1 · 建議買 19:30 入場。</p><div class="actions"><a href="https://www.teamlab.art/e/tokyo/" target="_blank" rel="noopener">Official</a><a class="map" href="https://maps.google.com/?q=teamLab+Borderless+Azabudai" target="_blank" rel="noopener">Maps</a></div></div></article>
-
-      <article class="card"><div class="time">21:30</div><div class="content"><h3>東京鐵塔 Night Walk</h3><p>麻布台 Hills → 東京鐵塔腳下 → 赤羽橋交差點 → 芝公園方向。1× 環境、2× 街道＋東京鐵塔。</p><div class="actions"><a href="https://www.tokyotower.co.jp/" target="_blank" rel="noopener">Official</a><a class="map" href="https://maps.google.com/?q=Tokyo+Tower" target="_blank" rel="noopener">Maps</a></div></div></article>
-
-      <article class="card transit"><div class="time">22:15</div><div class="content"><h3>東京鐵塔 → 飯店</h3><p>赤羽橋 E21 → 大江戶線至大門 E20 → 都營淺草線南行 → 京急直通 → 大森海岸。</p></div></article>
+      <div class="feature-image"><img src="images/tower.svg" alt="Tokyo Tower original illustration"><div><span>FINAL SEQUENCE</span><b>TOKYO TOWER NIGHT WALK</b></div></div>
+      <article class="card"><div class="time">21:30</div><div class="content"><h3>東京鐵塔 Night Walk</h3><p>麻布台 Hills → 東京鐵塔腳下 → 赤羽橋交差點 → 芝公園方向。</p><div class="actions"><a href="https://www.tokyotower.co.jp/" target="_blank" rel="noopener">OFFICIAL</a><a class="map" href="https://maps.google.com/?q=Tokyo+Tower" target="_blank" rel="noopener">MAP</a></div></div></article>
+      <details class="transit-block"><summary><span>22:15</span> 東京鐵塔 → 飯店</summary><p>赤羽橋 E21 → 大江戶線至大門 E20 → 都營淺草線南行 → 京急直通 → 大森海岸。</p></details>
     </section>
 
     <section id="info" class="day-section">
-      <div class="section-head"><p>REFERENCE</p><h2>INFO / CHECKLIST</h2></div>
+      <div class="section-head"><p>REFERENCE / SYSTEM DATA</p><h2>INFO / CHECKLIST</h2></div>
       <div class="grid two">
-        <article class="mini-card"><h3>☕ COFFEE</h3><ul><li>GLITCH — 10/26</li><li>Starbucks Reserve Roastery — 10/27</li><li>FUGLEN ASAKUSA — 10/27</li><li>Blue Bottle Kiyosumi — 10/27 (optional)</li></ul></article>
+        <article class="mini-card"><h3>☕ COFFEE</h3><ul><li>GLITCH — 10/26</li><li>Starbucks Reserve Roastery — 10/27</li><li>FUGLEN ASAKUSA — 10/27</li><li>Blue Bottle Kiyosumi — optional</li></ul></article>
         <article class="mini-card"><h3>🍮 SWEETS</h3><ul><li>BUTTER 美瑛 Hot Cake</li><li>治一郎布丁</li><li>龜十銅鑼燒</li><li>特色布丁：待確認</li></ul></article>
-        <article class="mini-card"><h3>🌵 PLANTS</h3><ul><li>RAFLUM POP-UP — 10/26 conditional</li><li>garage TOKYO — 10/26</li></ul></article>
-        <article class="mini-card"><h3>🎫 BOOKED</h3><ul><li>10/26 08:00 鮨 山治</li><li>10/26 11:10 KAGEMARU</li><li>10/26 12:00 KAGEMARU</li><li>10/26 19:30 鳥茂 — 目標預約</li><li>10/27 18:00 RistoPizza</li><li>teamLab 19:30 — 待購票</li></ul></article>
+        <article class="mini-card"><h3>🌵 PLANTS</h3><ul><li>RAFLUM POP-UP — conditional</li><li>garage TOKYO — 10/26</li></ul></article>
+        <article class="mini-card"><h3>🎫 BOOKINGS</h3><ul><li>10/26 08:00 鮨 山治</li><li>10/26 11:10 KAGEMARU</li><li>10/26 12:00 KAGEMARU</li><li>10/26 19:30 鳥茂 — target</li><li>10/27 18:00 RistoPizza</li><li>teamLab 19:30 — 待購票</li></ul></article>
       </div>
-      <article class="card"><div class="time">HOTEL</div><div class="content"><h3>Tmark City Hotel Tokyo Omori</h3><p>京急大森海岸站約 1 分鐘；JR 大森站約 10 分鐘。</p><div class="actions"><a class="map" href="https://maps.google.com/?q=Tmark+City+Hotel+Tokyo+Omori" target="_blank" rel="noopener">Maps</a></div></div></article>
+      <article class="card"><div class="time">HOTEL</div><div class="content"><h3>Tmark City Hotel Tokyo Omori</h3><p>京急大森海岸站約 1 分鐘；JR 大森站約 10 分鐘。</p><div class="actions"><a class="map" href="https://maps.google.com/?q=Tmark+City+Hotel+Tokyo+Omori" target="_blank" rel="noopener">MAP</a></div></div></article>
       <article class="card"><div class="time">IC</div><div class="content"><h3>Suica / PASMO</h3><p>這趟會混用 JR、京急、Tokyo Metro、都營、東武、百合海鷗，不建議為了回本而綁一日券。</p></div></article>
     </section>
   </main>
 
-  <footer>
-    <p>TOKYO IS TEMPORARY · TOKYO-III IS FOREVER</p>
-    <p class="small">Built for 2026.10.23 — 10.28</p>
-  </footer>
+  <section class="route-control-legend">
+    <div><span class="legend-dot booked-dot"></span><b>BOOKED</b><small>固定預約</small></div>
+    <div><span class="legend-dot eva-dot"></span><b>EVA CORE</b><small>不可壓縮</small></div>
+    <div><span class="legend-dot optional-dot"></span><b>OPTIONAL</b><small>延誤時優先刪除</small></div>
+    <div><span class="legend-dot hard-dot"></span><b>HARD STOP</b><small>逾時即撤離</small></div>
+  </section>
 
+  <footer><div class="warning-bar">FIELD GUIDE / PERSONAL USE</div><p>TOKYO IS TEMPORARY · TOKYO-III IS FOREVER</p><p class="small">Original EVA-inspired interface. No official logos or copyrighted character artwork used.</p></footer>
   <script src="script.js"></script>
 </body>
 </html>
