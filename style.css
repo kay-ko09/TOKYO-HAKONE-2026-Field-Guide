@@ -260,3 +260,11 @@ body.modal-open{overflow:hidden}
 /* v17 — film log subpage entry */
 .film-log-open{display:block;margin-top:9px;padding:9px 11px;border-radius:8px;background:#171616;color:#fff;text-decoration:none;text-align:center;font-size:10px;font-weight:700;letter-spacing:.03em}
 .film-log-open:hover{background:#66507d}
+
+
+/* v17.1 — film log is a separate utility page; keep the field guide visually clean. */
+.film-nav-link{border:0;border-right:1px solid var(--line);background:#f3efe7;color:var(--ink);padding:10px 15px;min-width:130px;display:flex;align-items:center;gap:8px;text-decoration:none;flex:0 0 auto}
+.film-nav-link b{font-size:21px;font-weight:750;letter-spacing:-.025em;color:var(--green)}
+.film-nav-link span{font-size:9.5px;font-weight:650;letter-spacing:.035em}
+.film-nav-link:hover{background:#e9ede5}
+@media(max-width:700px){.film-nav-link{min-width:104px;padding:9px 10px;gap:6px;justify-content:center}.film-nav-link b{font-size:17px}.film-nav-link span{font-size:9.5px}}

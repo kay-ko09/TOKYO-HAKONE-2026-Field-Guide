@@ -9,19 +9,69 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="film-log.css?v=17.0"/>
+<link rel="stylesheet" href="film-log.css?v=17.1"/>
 </head>
 <body>
 <header class="film-header">
   <div>
     <p class="kicker">TOKYO / HAKONE 2026 · ANALOG MEMORY</p>
-    <h1>35MM FILM LOG</h1>
-    <p class="sub">每捲底片與每一格拍攝內容都可以直接在手機上記錄；資料只存在這台裝置的瀏覽器。</p>
+    <h1>FILM / LOG</h1>
+    <p class="sub">把底片庫存、補給點、每一捲與每一格拍攝內容放在同一頁。旅行主頁只保留行程，這裡專心處理底片。</p>
   </div>
   <a class="back" href="index.html">← FIELD GUIDE</a>
 </header>
 
 <main>
+<section class="film-supply-board">
+  <div class="inventory-card" id="filmCounter">
+    <div class="inventory-copy">
+      <span class="supply-kicker">FILM INVENTORY</span>
+      <h2>手上還有幾捲？</h2>
+      <p id="filmStatus">READY · 6 ROLLS REMAINING</p>
+    </div>
+    <div class="inventory-number" id="filmCount">6</div>
+    <div class="inventory-actions">
+      <button id="filmMinus" type="button">− 用掉 1 捲</button>
+      <button id="filmPlus" type="button">＋ 補進 1 捲</button>
+      <button id="filmReset" type="button">回到 6 捲</button>
+    </div>
+  </div>
+
+  <div class="supply-plan">
+    <div class="supply-plan-head">
+      <span class="supply-kicker">RESTOCK PLAN</span>
+      <h2>沿路補底片</h2>
+      <p>前三天先以 6 捲作安全存量；有順路機會就補，不為了底片脫團。</p>
+    </div>
+    <div class="supply-grid">
+      <article class="supply-card emergency">
+        <span>10/24 · ASK GUIDE</span>
+        <h3>カメラのキタムラ 富士吉田店</h3>
+        <p>官方有 35mm film。不是旅行團正式停靠點，只在剩 2–3 捲以下時問導遊能否短停。</p>
+        <div class="supply-links"><a href="https://store.kitamura.jp/kitamura/detail/4989/" target="_blank" rel="noopener">OFFICIAL</a><a href="https://maps.google.com/?q=カメラのキタムラ+富士吉田+富士吉田店" target="_blank" rel="noopener">MAP</a></div>
+      </article>
+      <article class="supply-card check">
+        <span>10/25 · FIRST CHECK</span>
+        <h3>Air BicCamera DiverCity 2F</h3>
+        <p>完全順路。先看 35mm 現貨，有就補；沒有就直接離開，不把時間耗在調貨。</p>
+        <div class="supply-links"><a href="https://www.biccamera.com/bc/i/shop/shoplist/shop407.jsp" target="_blank" rel="noopener">OFFICIAL</a><a href="https://maps.google.com/?q=Air+BicCamera+DiverCity+Tokyo+Plaza" target="_blank" rel="noopener">MAP</a></div>
+      </article>
+      <article class="supply-card main">
+        <span>10/26 · MAIN RESTOCK</span>
+        <h3>レモン社 銀座教会店</h3>
+        <p>二手底片相機＋35mm 主補給點。這站本來就排進行程，最適合依剩餘卷數補貨。</p>
+        <div class="supply-links"><a href="https://lemonsha.com/store" target="_blank" rel="noopener">OFFICIAL</a><a href="https://maps.google.com/?q=レモン社+銀座教会店" target="_blank" rel="noopener">MAP</a></div>
+      </article>
+      <article class="supply-card backup">
+        <span>10/26 · BACKUP</span>
+        <h3>ビックカメラ 有楽町店</h3>
+        <p>Lemon-sha 沒有想要的品牌／ISO 時再看。就在有樂町區域，不必為了補底片另外跨區。</p>
+        <div class="supply-links"><a href="https://www.biccamera.com/bc/i/shop/shoplist/shop014.jsp" target="_blank" rel="noopener">OFFICIAL</a><a href="https://maps.google.com/?q=ビックカメラ+有楽町店" target="_blank" rel="noopener">MAP</a></div>
+      </article>
+    </div>
+  </div>
+</section>
+
 <section class="toolbar">
   <div class="stat"><span>ROLLS</span><b id="rollCount">0</b></div>
   <div class="stat"><span>FRAMES NOTED</span><b id="frameNoted">0</b></div>
@@ -81,6 +131,6 @@
 </article>
 </template>
 
-<script src="film-log.js?v=17.0"></script>
+<script src="film-log.js?v=17.1"></script>
 </body>
 </html>

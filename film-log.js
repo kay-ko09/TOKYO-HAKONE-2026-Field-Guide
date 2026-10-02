@@ -1,3 +1,25 @@
+// v17.1 — film inventory lives only on the dedicated Film Log page.
+(() => {
+  const wrap=document.getElementById('filmCounter');
+  const out=document.getElementById('filmCount');
+  const status=document.getElementById('filmStatus');
+  if(!wrap||!out||!status) return;
+  const key='tokyoHakoneFilmRolls';
+  let n=parseInt(localStorage.getItem(key) ?? '6',10);
+  if(!Number.isFinite(n)||n<0) n=6;
+  function render(){
+    out.textContent=n;
+    wrap.classList.toggle('low',n>0&&n<=2);
+    wrap.classList.toggle('empty',n===0);
+    status.textContent=n===0?'EMPTY · 需要補貨':n<=2?'LOW FILM · 下一個機會補貨':n<=4?'WATCH SUPPLY · 留意補給點':`READY · ${n} ROLLS REMAINING`;
+    localStorage.setItem(key,String(n));
+  }
+  document.getElementById('filmMinus')?.addEventListener('click',()=>{n=Math.max(0,n-1);render();});
+  document.getElementById('filmPlus')?.addEventListener('click',()=>{n+=1;render();});
+  document.getElementById('filmReset')?.addEventListener('click',()=>{n=6;render();});
+  render();
+})();
+
 (() => {
   const KEY='tokyo-film-log-v1';
   const list=document.getElementById('rollList');
