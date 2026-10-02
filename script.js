@@ -194,7 +194,7 @@ function closeMatchaOrder(){
   matchaOrderModal.setAttribute('aria-hidden','true');
   document.body.classList.remove('modal-open');
 }
-document.querySelectorAll('.show-matcha-order').forEach(b=>b.addEventListener('click',openMatchaOrder));
-document.querySelectorAll('.matcha-order-close').forEach(b=>b.addEventListener('click',closeMatchaOrder));
+document.querySelectorAll('.show-matcha-order').forEach(b=>b.addEventListener('click',e=>{e.preventDefault();openMatchaOrder();}));
+document.querySelectorAll('.matcha-order-close').forEach(b=>b.addEventListener('click',e=>{e.preventDefault();closeMatchaOrder();if(location.hash==='#matchaOrderModal') history.replaceState(null,'',location.pathname+location.search);}));
 if(matchaOrderModal) matchaOrderModal.addEventListener('click',e=>{if(e.target===matchaOrderModal) closeMatchaOrder();});
 document.addEventListener('keydown',e=>{if(e.key==='Escape' && matchaOrderModal?.classList.contains('open')) closeMatchaOrder();});

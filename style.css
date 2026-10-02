@@ -242,3 +242,9 @@ body.modal-open{overflow:hidden}
 .actions button.show-matcha-order{font:700 10px/1.1 var(--font-ui);min-height:34px;padding:7px 9px;border:1px solid #67785e;background:#f0f4ed;color:#33402f;border-radius:7px;cursor:pointer}
 .matcha-order-modal{position:fixed;inset:0;z-index:1110;background:rgba(15,14,14,.82);display:none;align-items:center;justify-content:center;padding:12px}.matcha-order-modal.open{display:flex}.matcha-order-panel{width:min(620px,100%);max-height:96vh;overflow:auto;background:#fffdf9;border-radius:16px;padding:20px 16px 16px;position:relative}.matcha-order-close:not(.matcha-order-done){position:absolute;right:12px;top:10px;width:38px;height:38px;border:0;border-radius:50%;background:#eee9e2;font-size:24px}.matcha-order-panel h2{font:800 28px/1.2 var(--font-ui);margin:0 42px 16px 0}.matcha-order-done{width:100%;min-height:44px;border:0;border-radius:9px;background:#272329;color:#fff;font:700 12px/1 var(--font-ui)}
 @media(max-width:700px){.matcha-order-modal{padding:5px}.matcha-order-panel{width:100%;max-height:98vh;padding:16px 11px 11px}.matcha-order-panel h2{font-size:25px}}
+
+/* v16.7.1 — Matcha Order Card fallback: works even if GitHub/browser caches old JS. */
+.matcha-order-modal:target{display:flex}
+.actions a.show-matcha-order{font:700 10px/1.1 var(--font-ui);min-height:34px;padding:7px 9px;border:1px solid #67785e;background:#f0f4ed;color:#33402f;border-radius:7px;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center}
+.matcha-order-close{display:flex;align-items:center;justify-content:center;text-decoration:none;color:#272329}
+.matcha-order-done{display:flex;align-items:center;justify-content:center;text-decoration:none;color:#fff}
