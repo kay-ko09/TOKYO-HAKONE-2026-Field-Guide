@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta name="theme-color" content="#f4f1ea"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<title>35MM FILM LOG — TOKYO / HAKONE 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="film-log.css?v=17.0"/>
+</head>
+<body>
+<header class="film-header">
+  <div>
+    <p class="kicker">TOKYO / HAKONE 2026 · ANALOG MEMORY</p>
+    <h1>35MM FILM LOG</h1>
+    <p class="sub">每捲底片與每一格拍攝內容都可以直接在手機上記錄；資料只存在這台裝置的瀏覽器。</p>
+  </div>
+  <a class="back" href="index.html">← FIELD GUIDE</a>
+</header>
+
+<main>
+<section class="toolbar">
+  <div class="stat"><span>ROLLS</span><b id="rollCount">0</b></div>
+  <div class="stat"><span>FRAMES NOTED</span><b id="frameNoted">0</b></div>
+  <button class="primary" id="addRoll" type="button">＋ NEW ROLL</button>
+</section>
+
+<section class="backup-note">
+  <b>AUTO SAVE</b>
+  <span>所有欄位輸入後會自動儲存在瀏覽器。建議旅行中偶爾按「EXPORT BACKUP」下載備份檔，避免清除瀏覽器資料後遺失。</span>
+</section>
+
+<section id="rollList" class="roll-list" aria-live="polite"></section>
+
+<section class="data-tools">
+  <h2>BACKUP / RESTORE</h2>
+  <div class="data-actions">
+    <button id="exportData" type="button">EXPORT BACKUP</button>
+    <label class="import-label">IMPORT BACKUP<input id="importData" type="file" accept="application/json,.json"/></label>
+  </div>
+  <p>備份檔為 JSON，只包含你輸入的底片紀錄，不包含網站其他資料。</p>
+</section>
+</main>
+
+<template id="rollTemplate">
+<article class="roll-card">
+  <div class="roll-head">
+    <div>
+      <span class="roll-index"></span>
+      <h2 class="roll-title">UNTITLED ROLL</h2>
+    </div>
+    <button class="collapse" type="button" aria-label="收合底片">−</button>
+  </div>
+  <div class="roll-body">
+    <div class="meta-grid">
+      <label><span>ROLL NAME / 編號</span><input data-field="name" placeholder="例如 TOKYO 01"/></label>
+      <label><span>FILM / 廠牌・型號</span><input data-field="film" placeholder="Kodak Gold 200"/></label>
+      <label><span>ISO</span><input data-field="iso" inputmode="numeric" placeholder="200"/></label>
+      <label><span>CAMERA</span><input data-field="camera" placeholder="Rollei Prego 70"/></label>
+      <label><span>LOADED / 裝片</span><input data-field="loaded" type="date"/></label>
+      <label><span>FINISHED / 拍完</span><input data-field="finished" type="date"/></label>
+      <label><span>FRAMES</span><select data-field="frames"><option value="36">36</option><option value="37">37</option><option value="38">38</option></select></label>
+      <label><span>STATUS</span><select data-field="status"><option value="loaded">IN CAMERA</option><option value="finished">FINISHED</option><option value="developed">DEVELOPED</option><option value="scanned">SCANNED</option></select></label>
+    </div>
+    <label class="roll-note"><span>ROLL NOTE</span><textarea data-field="note" rows="2" placeholder="例如：前三天富士山／箱根；偏向秋色、街景"></textarea></label>
+
+    <div class="frame-head">
+      <div><span>FRAME NOTES</span><b class="frame-progress">0 / 36 noted</b></div>
+      <button class="fill-date" type="button">TODAY → EMPTY DATES</button>
+    </div>
+    <div class="frames"></div>
+
+    <div class="roll-actions">
+      <button class="duplicate" type="button">DUPLICATE ROLL</button>
+      <button class="delete" type="button">DELETE ROLL</button>
+    </div>
+  </div>
+</article>
+</template>
+
+<script src="film-log.js?v=17.0"></script>
+</body>
+</html>

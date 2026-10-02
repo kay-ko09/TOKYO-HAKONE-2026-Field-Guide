@@ -37,8 +37,12 @@ Added Nakamura Tokichi matcha ORDER CARD for ミクスチャ［抹茶とミル�
 - Added user-provided storefront photo for entrance recognition.
 - Leonardo / National Art Center remains higher priority; camera stop is skipped if timing slips.
 
-## v16.9 — FILM SUPPLY
+## v17.0 — FILM SUPPLY
 - Persistent 35mm FILM COUNTER, default 6 rolls; low-stock warning at 2 rolls.
 - Day 2: Kitamura Fujiyoshida / Gotemba Central are guide-approved emergency-only options.
 - Day 3: Air BicCamera DiverCity 2F is a first-check restock point; stock is explicitly not guaranteed.
 - Day 4: Lemon-sha Ginza remains main restock; BicCamera Yurakucho is backup.
+
+
+## v17.0 — FILM LOG
+新增 `film-log.html`：可編輯底片捲資訊、ISO、相機、36/37/38 格逐格拍攝紀錄，資料自動儲存於瀏覽器 localStorage，並支援 JSON 備份匯出／匯入。
