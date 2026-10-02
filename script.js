@@ -205,6 +205,7 @@ const expensePresets = [
   {match:'築地 鮨 山治', place:'築地 鮨 山治', category:'FOOD', date:'2026-10-26', item:'早餐壽司'},
   {match:'GLITCH COFFEE GINZA', place:'GLITCH COFFEE GINZA', category:'COFFEE', date:'2026-10-26', item:'Coffee'},
   {match:'辻田 銀座', place:'辻田 銀座', category:'FOOD', date:'2026-10-26', item:'つけ麺 / 拉麵'},
+  {match:'治一郎 KITTE 丸之內', place:'治一郎 KITTE 丸之內', category:'FOOD', date:'2026-10-26', item:'治一郎プリン'},
   {match:'BUTTER — Biei Pasture Dairy Farm', place:'BUTTER — Biei Pasture Dairy Farm', category:'FOOD', date:'2026-10-26', item:'Hot Cake / 美瑛奶油'},
   {match:'uRn.chAi&TeA LUMINE1', place:'uRn.chAi&TeA LUMINE1', category:'COFFEE', date:'2026-10-26', item:'Original Chai'},
   {match:'鳥茂 / TORISHIGE', place:'鳥茂 / TORISHIGE', category:'FOOD', date:'2026-10-26', item:'Dinner'},
@@ -229,7 +230,9 @@ document.querySelectorAll('.card').forEach(card => {
     tools.className = 'travel-tools';
     content.appendChild(tools);
   }
-  if (tools.querySelector('.expense-link')) return;
+  // Any existing wallet link in this card already fulfills the action.
+  // Check the whole card, not just .travel-tools, so hand-authored buttons never duplicate.
+  if (content.querySelector('a[href^="wallet.html"]') || tools.querySelector('.expense-link')) return;
   const params = new URLSearchParams({
     place:preset.place,
     category:preset.category,
@@ -242,4 +245,19 @@ document.querySelectorAll('.card').forEach(card => {
   a.href = 'wallet.html?' + params.toString();
   a.textContent = '¥ 記帳';
   tools.appendChild(a);
+});
+
+
+// v17.6.2 — Defensive button de-duplication.
+// Older page revisions sometimes contained a hand-authored wallet button plus a JS-generated one.
+document.querySelectorAll('.card .content').forEach(content => {
+  const expenseLinks = [...content.querySelectorAll('a[href^="wallet.html"], .expense-link')];
+  expenseLinks.slice(1).forEach(el => el.remove());
+
+  // Remove exact duplicate action links (same label + same destination) without touching distinct photo-spot maps.
+  const seen = new Set();
+  content.querySelectorAll('.actions a, .travel-tools a').forEach(a => {
+    const key = `${a.textContent.trim()}|${a.getAttribute('href') || ''}`;
+    if (seen.has(key)) a.remove(); else seen.add(key);
+  });
 });

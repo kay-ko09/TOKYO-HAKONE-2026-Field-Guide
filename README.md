@@ -49,3 +49,9 @@ v17.6: Added Yurakucho Marui venue recognition image beside KAGEMARU key visual,
 - Re-cropped the Yurakucho Marui source image to a 1:1 mobile recognition crop focusing on the OIOI facade and entrance.
 - Physically resized the venue image to 640x640 WebP (~50KB) instead of loading the full 1370x2048 image.
 - Reduced KAGEMARU paired visuals to 112px height on phones and 98px on <=390px screens.
+
+
+## v17.6.2
+- Fix duplicate action buttons, especially duplicate `¥ 記帳`.
+- Expense links are now generated from one source only.
+- Added defensive de-duplication so legacy hand-authored controls do not reappear after refresh.
