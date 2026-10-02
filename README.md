@@ -41,3 +41,5 @@ Upload the complete contents of this ZIP to the repository root, including `film
 - 10/26 late-night ramen backups: Kaijin (early only), Manrai, Hayashida, Nagi, Ichiran last resort.
 - 10/27: nanashian Swan Lake pudding removed; Azabudai buffer restored; late-night ramen backups AFURI Roppongi, Azabu Ramen, Ichiran Shimbashi.
 - Hotel-dependent routes marked TBA where edited.
+
+v17.6: Added Yurakucho Marui venue recognition image beside KAGEMARU key visual, mobile crop, venue address and MAP button.

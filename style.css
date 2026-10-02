@@ -271,3 +271,23 @@ body.modal-open{overflow:hidden}
 
 /* v17.3 — one-tap wallet link */
 .travel-tools .expense-link{background:#eef2e9;border-color:#a8b39f;color:#34402f;font-weight:750}
+
+/* v17.6 — KAGEMARU venue recognition */
+.kagemaru-visual-pair{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px;align-items:stretch;margin:14px 0 12px}
+.kagemaru-visual-pair figure{margin:0;min-width:0}
+.kagemaru-visual-pair .photo-poster{width:auto;max-width:none}
+.kagemaru-visual-pair .photo-poster img,.venue-photo img{display:block;width:100%;height:250px;object-fit:cover;border-radius:9px 9px 0 0}
+.kagemaru-visual-pair .photo-poster img{object-fit:contain;background:#111}
+.venue-photo{overflow:hidden;border-radius:10px;background:#e7e2da;border:1px solid rgba(23,22,22,.08)}
+.venue-photo img{object-position:center 56%}
+.venue-photo figcaption,.kagemaru-visual-pair figcaption{padding:7px 8px;font:650 9px/1.35 var(--font-ui);letter-spacing:.04em;color:#555;background:#f4f0e9}
+@media(max-width:600px){
+ .kagemaru-visual-pair{gap:7px;margin:9px 0 10px}
+ .kagemaru-visual-pair .photo-poster{width:auto;margin:0}
+ .kagemaru-visual-pair .photo-poster img,.venue-photo img{height:150px!important}
+ .venue-photo img{object-position:center 60%}
+ .venue-photo figcaption,.kagemaru-visual-pair figcaption{padding:6px;font-size:8px}
+}
+@media(max-width:390px){
+ .kagemaru-visual-pair .photo-poster img,.venue-photo img{height:132px!important}
+}
