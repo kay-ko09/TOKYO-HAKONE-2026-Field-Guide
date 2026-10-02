@@ -158,3 +158,23 @@ if(copyDriver) copyDriver.addEventListener('click', async () => {
   catch(e) { copyDriver.textContent=currentDriverAddress; }
   setTimeout(()=>copyDriver.textContent='住所をコピー',1400);
 });
+
+
+// v16.6 — Starbucks Order Mode.
+const orderModal = document.getElementById('orderModal');
+function openOrder(){
+  if(!orderModal) return;
+  orderModal.classList.add('open');
+  orderModal.setAttribute('aria-hidden','false');
+  document.body.classList.add('modal-open');
+}
+function closeOrder(){
+  if(!orderModal) return;
+  orderModal.classList.remove('open');
+  orderModal.setAttribute('aria-hidden','true');
+  document.body.classList.remove('modal-open');
+}
+document.querySelectorAll('.show-order').forEach(b=>b.addEventListener('click',openOrder));
+document.querySelectorAll('.order-close').forEach(b=>b.addEventListener('click',closeOrder));
+if(orderModal) orderModal.addEventListener('click',e=>{if(e.target===orderModal) closeOrder();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape' && orderModal?.classList.contains('open')) closeOrder();});
