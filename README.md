@@ -30,3 +30,9 @@ GitHub Pages 靜態網站完整封包。
 
 ## v16.7
 Added Nakamura Tokichi matcha ORDER CARD for ミクスチャ［抹茶とミルク］ / 甘さ控えめ.
+
+## v16.8
+- Added Lemon-sha Ginza Church Store to 10/26 as an optional 15–20 minute used-film-camera stop.
+- Added 35mm film restock mission and camera condition checklist.
+- Added user-provided storefront photo for entrance recognition.
+- Leonardo / National Art Center remains higher priority; camera stop is skipped if timing slips.
