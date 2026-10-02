@@ -199,3 +199,47 @@ document.querySelectorAll('.matcha-order-close').forEach(b=>b.addEventListener('
 if(matchaOrderModal) matchaOrderModal.addEventListener('click',e=>{if(e.target===matchaOrderModal) closeMatchaOrder();});
 document.addEventListener('keydown',e=>{if(e.key==='Escape' && matchaOrderModal?.classList.contains('open')) closeMatchaOrder();});
 
+
+// v17.3 — One-tap expense logging from food / drink cards.
+const expensePresets = [
+  {match:'築地 鮨 山治', place:'築地 鮨 山治', category:'FOOD', date:'2026-10-26', item:'早餐壽司'},
+  {match:'GLITCH COFFEE GINZA', place:'GLITCH COFFEE GINZA', category:'COFFEE', date:'2026-10-26', item:'Coffee'},
+  {match:'辻田 銀座', place:'辻田 銀座', category:'FOOD', date:'2026-10-26', item:'つけ麺 / 拉麵'},
+  {match:'BUTTER — Biei Pasture Dairy Farm', place:'BUTTER — Biei Pasture Dairy Farm', category:'FOOD', date:'2026-10-26', item:'Hot Cake / 美瑛奶油'},
+  {match:'uRn.chAi&TeA LUMINE1', place:'uRn.chAi&TeA LUMINE1', category:'COFFEE', date:'2026-10-26', item:'Original Chai'},
+  {match:'鳥茂 / TORISHIGE', place:'鳥茂 / TORISHIGE', category:'FOOD', date:'2026-10-26', item:'Dinner'},
+  {match:'かつお食堂', place:'かつお食堂', category:'FOOD', date:'2026-10-27', item:'鰹節ごはん'},
+  {match:'Starbucks Reserve Roastery Tokyo', place:'Starbucks Reserve Roastery Tokyo', category:'COFFEE', date:'2026-10-27', item:'Starbucks'},
+  {match:'本とさや / HONTOSAYA', place:'本とさや / HONTOSAYA', category:'FOOD', date:'2026-10-27', item:'燒肉'},
+  {match:'龜十', place:'龜十', category:'FOOD', date:'2026-10-27', item:'銅鑼燒'},
+  {match:'FUGLEN ASAKUSA', place:'FUGLEN ASAKUSA', category:'COFFEE', date:'2026-10-27', item:'Coffee'},
+  {match:'中村藤吉本店 麻布台店', place:'中村藤吉本店 麻布台店', category:'COFFEE', date:'2026-10-27', item:'ミクスチャ［抹茶とミルク］'},
+  {match:'RistoPizza by Napoli sta ca', place:'RistoPizza by Napoli sta ca', category:'FOOD', date:'2026-10-27', item:'Dinner'}
+];
+
+document.querySelectorAll('.card').forEach(card => {
+  const h3 = card.querySelector('.content h3');
+  const content = card.querySelector('.content');
+  if (!h3 || !content) return;
+  const preset = expensePresets.find(x => h3.textContent.trim().startsWith(x.match));
+  if (!preset) return;
+  let tools = content.querySelector('.travel-tools');
+  if (!tools) {
+    tools = document.createElement('div');
+    tools.className = 'travel-tools';
+    content.appendChild(tools);
+  }
+  if (tools.querySelector('.expense-link')) return;
+  const params = new URLSearchParams({
+    place:preset.place,
+    category:preset.category,
+    date:preset.date,
+    item:preset.item,
+    source:'field-guide'
+  });
+  const a = document.createElement('a');
+  a.className = 'expense-link';
+  a.href = 'wallet.html?' + params.toString();
+  a.textContent = '¥ 記帳';
+  tools.appendChild(a);
+});
