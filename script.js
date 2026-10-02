@@ -117,3 +117,44 @@ if (copyWatch) {
     setTimeout(() => copyWatch.textContent = '型番をコピー', 1200);
   });
 }
+
+// v16.5 — Driver Mode for taxi-worthy routes only.
+const driverModal = document.getElementById('driverModal');
+const driverJp = document.getElementById('driverJp');
+const driverName = document.getElementById('driverName');
+const driverAddress = document.getElementById('driverAddress');
+const driverMap = document.getElementById('driverMap');
+let currentDriverAddress = '';
+
+document.querySelectorAll('.transit-block[data-driver-address]').forEach(route => {
+  const btn = document.createElement('button');
+  btn.type = 'button';
+  btn.className = 'driver-trigger';
+  btn.textContent = '司機に見せる / SHOW DRIVER';
+  btn.addEventListener('click', () => {
+    currentDriverAddress = route.dataset.driverAddress || '';
+    driverJp.textContent = route.dataset.driverJp || route.dataset.driverName || '';
+    driverName.textContent = route.dataset.driverName || '';
+    driverAddress.textContent = currentDriverAddress;
+    driverMap.href = route.dataset.driverMap || ('https://maps.google.com/?q=' + encodeURIComponent(currentDriverAddress));
+    driverModal?.classList.add('open');
+    driverModal?.setAttribute('aria-hidden','false');
+    document.body.classList.add('modal-open');
+  });
+  route.appendChild(btn);
+});
+
+function closeDriver(){
+  driverModal?.classList.remove('open');
+  driverModal?.setAttribute('aria-hidden','true');
+  document.body.classList.remove('modal-open');
+}
+document.querySelectorAll('.driver-close').forEach(b => b.addEventListener('click', closeDriver));
+if(driverModal) driverModal.addEventListener('click', e => { if(e.target === driverModal) closeDriver(); });
+document.addEventListener('keydown', e => { if(e.key === 'Escape' && driverModal?.classList.contains('open')) closeDriver(); });
+const copyDriver = document.getElementById('copyDriverAddress');
+if(copyDriver) copyDriver.addEventListener('click', async () => {
+  try { await navigator.clipboard.writeText(currentDriverAddress); copyDriver.textContent='コピーしました'; }
+  catch(e) { copyDriver.textContent=currentDriverAddress; }
+  setTimeout(()=>copyDriver.textContent='住所をコピー',1400);
+});

@@ -21,3 +21,8 @@ GitHub Pages 靜態網站完整封包。
 - 修正重複 MAP 按鈕
 - 修正 NEXT ROUTE 導航
 - 新增 STPX107 店員展示全螢幕卡片
+
+## v16.5
+- Added SHOW DRIVER full-screen cards to taxi-worthy routes.
+- Current cards: Katsuo Shokudo -> Starbucks Roastery; SMALL WORLDS -> Hontosaya delay backup; Kiyosumi -> RistoPizza delay backup.
+- Hotel-dependent taxi cards remain TBA until final hotel is confirmed.
