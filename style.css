@@ -209,3 +209,22 @@ body.modal-open{overflow:hidden}
   .watch-modal{padding:10px}.watch-modal-panel{padding:18px 14px 14px;border-radius:14px}.watch-modal h2{font-size:40px}.watch-modal img{max-height:42vh}.watch-jp p{font-size:17px}.watch-modal-actions{grid-template-columns:1fr}
   .travel-tools{grid-template-columns:repeat(2,1fr)}
 }
+
+
+/* v16.3 — STPX107 clerk view: single-watch, legible on phones */
+.watch-modal-panel{width:min(96vw,560px)}
+.watch-modal .watch-clerk-image{display:block;width:min(78vw,390px);height:auto;max-height:none;object-fit:contain;margin:0 auto;border-radius:12px;background:#faf8f4;border:1px solid var(--line)}
+.watch-modal h2{font-size:clamp(46px,12vw,72px);margin:5px 0 12px;letter-spacing:-.04em}
+.watch-jp{text-align:center}
+.watch-jp p:first-child{font-size:20px;font-weight:700}
+@media(max-width:700px){
+  .watch-modal{padding:6px}
+  .watch-modal-panel{width:98vw;max-height:98vh;padding:14px 10px 10px;border-radius:12px}
+  .watch-modal .watch-clerk-image{width:min(72vw,320px);max-height:56vh}
+  .watch-modal h2{font-size:48px;margin:2px 0 8px}
+  .watch-kicker{font-size:9px}
+  .watch-jp{margin-top:10px;padding:9px 8px}
+  .watch-jp p{font-size:15px;line-height:1.45}
+  .watch-jp p:first-child{font-size:17px}
+  .watch-modal-actions{margin-top:10px}
+}
