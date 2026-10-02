@@ -43,3 +43,9 @@ Upload the complete contents of this ZIP to the repository root, including `film
 - Hotel-dependent routes marked TBA where edited.
 
 v17.6: Added Yurakucho Marui venue recognition image beside KAGEMARU key visual, mobile crop, venue address and MAP button.
+
+
+## v17.6.1
+- Re-cropped the Yurakucho Marui source image to a 1:1 mobile recognition crop focusing on the OIOI facade and entrance.
+- Physically resized the venue image to 640x640 WebP (~50KB) instead of loading the full 1370x2048 image.
+- Reduced KAGEMARU paired visuals to 112px height on phones and 98px on <=390px screens.

@@ -284,10 +284,10 @@ body.modal-open{overflow:hidden}
 @media(max-width:600px){
  .kagemaru-visual-pair{gap:7px;margin:9px 0 10px}
  .kagemaru-visual-pair .photo-poster{width:auto;margin:0}
- .kagemaru-visual-pair .photo-poster img,.venue-photo img{height:150px!important}
- .venue-photo img{object-position:center 60%}
+ .kagemaru-visual-pair .photo-poster img,.venue-photo img{height:112px!important}
+ .venue-photo img{object-position:center center;object-fit:cover}
  .venue-photo figcaption,.kagemaru-visual-pair figcaption{padding:6px;font-size:8px}
 }
 @media(max-width:390px){
- .kagemaru-visual-pair .photo-poster img,.venue-photo img{height:132px!important}
+ .kagemaru-visual-pair .photo-poster img,.venue-photo img{height:98px!important}
 }
