@@ -16,3 +16,9 @@
 
 ## Upload to GitHub
 Upload the complete contents of this ZIP to the repository root, including `film-log.html`, `film-log.css`, `film-log.js`, and `assets/`.
+
+
+## v17.2
+- Added independent Trip Wallet page (wallet.html).
+- JPY/TWD conversion, categories, payer, place/item, daily/trip totals, local auto-save and JSON backup.
+- Main page stays clean with compact ¥ / WALLET navigation entry.
