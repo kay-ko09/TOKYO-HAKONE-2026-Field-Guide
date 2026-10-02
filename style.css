@@ -183,3 +183,29 @@ figure figcaption{padding:7px 9px 8px;font-size:9px;font-weight:650;letter-spaci
 .food-gallery figcaption{font-size:9px;line-height:1.35;padding:6px 7px;background:#faf8f3}
 @media(max-width:700px){.food-gallery{grid-template-columns:repeat(3,minmax(0,1fr));gap:5px}.food-gallery img{height:82px}.food-gallery figcaption{font-size:7.8px;padding:5px 4px}}
 @media(max-width:390px){.food-gallery img{height:72px}}
+
+/* v16.2 — button cleanup + watch clerk card */
+.actions button{display:inline-flex;align-items:center;justify-content:center;border:1px solid #c8c1b8;background:#faf8f3;border-radius:999px;padding:7px 11px;font:650 9.5px/1.2 var(--font-ui);cursor:pointer;color:var(--ink)}
+.actions button.show-watch{border-color:var(--purple);background:#f2edf6;color:#4f3c63}
+.route-flash{animation:routeFlash .9s ease}
+@keyframes routeFlash{0%,100%{box-shadow:none}35%{box-shadow:0 0 0 4px rgba(102,80,125,.18)}}
+body.modal-open{overflow:hidden}
+.watch-modal{position:fixed;inset:0;z-index:9999;background:rgba(18,16,20,.82);display:none;align-items:center;justify-content:center;padding:18px}
+.watch-modal.open{display:flex}
+.watch-modal-panel{position:relative;width:min(94vw,520px);max-height:92vh;overflow:auto;background:#fffdf9;border-radius:18px;padding:22px;box-shadow:0 24px 80px rgba(0,0,0,.35);text-align:center}
+.watch-close{position:absolute;right:12px;top:10px;width:38px;height:38px;border:0;border-radius:50%;background:#eee9f2;color:#272329;font-size:26px;line-height:1;cursor:pointer}
+.watch-kicker{font:700 10px/1.4 var(--font-ui);letter-spacing:.08em;color:var(--purple);margin-top:8px}
+.watch-modal h2{font:800 48px/1 var(--font-ui);letter-spacing:-.035em;margin:5px 0 14px}
+.watch-modal img{display:block;width:100%;max-height:46vh;object-fit:contain;border-radius:12px;background:#f6f2eb}
+.watch-jp{margin:16px 0 0;padding:14px 12px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);text-align:left}
+.watch-jp p{margin:4px 0;font-size:18px;line-height:1.55;color:#272329}
+.watch-jp strong{font-size:1.12em;color:var(--purple)}
+.watch-modal-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:14px}
+.watch-modal-actions button{min-height:44px;border:1px solid var(--ink);border-radius:9px;background:var(--ink);color:#fff;font:700 13px/1.2 var(--font-ui);cursor:pointer}
+.watch-modal-actions .secondary{position:static;width:auto;height:auto;border-radius:9px;background:#fff;color:var(--ink)}
+.watch-quick-card .actions{grid-template-columns:1fr}
+@media(max-width:700px){
+  .actions button{font-size:10px;min-height:34px;padding:7px 8px;border-radius:7px}
+  .watch-modal{padding:10px}.watch-modal-panel{padding:18px 14px 14px;border-radius:14px}.watch-modal h2{font-size:40px}.watch-modal img{max-height:42vh}.watch-jp p{font-size:17px}.watch-modal-actions{grid-template-columns:1fr}
+  .travel-tools{grid-template-columns:repeat(2,1fr)}
+}

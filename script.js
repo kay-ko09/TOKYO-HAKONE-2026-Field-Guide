@@ -18,7 +18,7 @@ document.querySelectorAll('.checklist input[type="checkbox"]').forEach((box, idx
   box.addEventListener('change', () => localStorage.setItem(key, box.checked ? '1' : '0'));
 });
 
-// v15: field-use controls
+// Travel mode toggle. Script now loads after the button, so this always binds correctly.
 const travelBtn = document.getElementById('travelMode');
 if (travelBtn) {
   const saved = localStorage.getItem('tokyo-travel-mode') === '1';
@@ -31,24 +31,89 @@ if (travelBtn) {
   });
 }
 
+// Field-use helper buttons. Do NOT duplicate MAP/OFFICIAL links already present in .actions.
 document.querySelectorAll('.card').forEach(card => {
   const content = card.querySelector('.content');
   if (!content || content.querySelector('.travel-tools')) return;
+
   const tools = document.createElement('div');
   tools.className = 'travel-tools';
-  const map = content.querySelector('.actions a.map');
-  const official = content.querySelector('.actions a:not(.map)');
-  if (map) tools.insertAdjacentHTML('beforeend', `<a href="${map.href}" target="_blank" rel="noopener">MAP</a>`);
+
   const info = [...content.querySelectorAll('.quick-info b')];
   const address = info.find(el => /東京都|区|丁目/.test(el.textContent));
   if (address) {
-    const btn = document.createElement('button'); btn.type='button'; btn.textContent='COPY ADDRESS';
-    btn.addEventListener('click', async () => { await navigator.clipboard.writeText(address.textContent.trim()); btn.textContent='COPIED'; setTimeout(()=>btn.textContent='COPY ADDRESS',1200); });
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.textContent = 'COPY ADDRESS';
+    btn.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(address.textContent.trim());
+        btn.textContent = 'COPIED';
+      } catch (e) {
+        btn.textContent = 'COPY FAILED';
+      }
+      setTimeout(() => btn.textContent = 'COPY ADDRESS', 1200);
+    });
     tools.appendChild(btn);
   }
-  if (official) tools.insertAdjacentHTML('beforeend', `<a href="${official.href}" target="_blank" rel="noopener">OFFICIAL</a>`);
-  const next = document.createElement('button'); next.type='button'; next.textContent='NEXT ROUTE';
-  next.addEventListener('click', () => { let n=card.nextElementSibling; while(n && !n.classList.contains('transit-block')) n=n.nextElementSibling; if(n){n.open=true;n.scrollIntoView({behavior:'smooth',block:'start'});} });
+
+  const next = document.createElement('button');
+  next.type = 'button';
+  next.textContent = 'NEXT ROUTE';
+  next.addEventListener('click', () => {
+    const section = card.closest('.day-section');
+    if (!section) return;
+    const flow = [...section.querySelectorAll('.card, .transit-block')];
+    const here = flow.indexOf(card);
+    let target = null;
+    for (let i = here + 1; i < flow.length; i++) {
+      if (flow[i].classList.contains('transit-block')) { target = flow[i]; break; }
+    }
+    // If this card is the last stop of the day, move to the next card instead of doing nothing.
+    if (!target && here >= 0 && flow[here + 1]) target = flow[here + 1];
+    if (target) {
+      if (target.tagName === 'DETAILS') target.open = true;
+      target.scrollIntoView({behavior:'smooth', block:'start'});
+      target.classList.add('route-flash');
+      setTimeout(() => target.classList.remove('route-flash'), 900);
+    } else {
+      next.textContent = 'END OF DAY';
+      setTimeout(() => next.textContent = 'NEXT ROUTE', 1200);
+    }
+  });
   tools.appendChild(next);
+
   if (tools.children.length) content.appendChild(tools);
 });
+
+// STPX107 full-screen clerk card.
+const watchModal = document.getElementById('watchModal');
+const openWatch = () => {
+  if (!watchModal) return;
+  watchModal.classList.add('open');
+  watchModal.setAttribute('aria-hidden', 'false');
+  document.body.classList.add('modal-open');
+};
+const closeWatch = () => {
+  if (!watchModal) return;
+  watchModal.classList.remove('open');
+  watchModal.setAttribute('aria-hidden', 'true');
+  document.body.classList.remove('modal-open');
+};
+document.querySelectorAll('.show-watch').forEach(btn => btn.addEventListener('click', openWatch));
+document.querySelectorAll('.watch-close').forEach(btn => btn.addEventListener('click', closeWatch));
+if (watchModal) watchModal.addEventListener('click', e => { if (e.target === watchModal) closeWatch(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeWatch(); });
+
+const copyWatch = document.getElementById('copyWatchModel');
+if (copyWatch) {
+  copyWatch.addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText('SEIKO Selection STPX107');
+      copyWatch.textContent = 'コピーしました';
+    } catch (e) {
+      copyWatch.textContent = 'STPX107';
+    }
+    setTimeout(() => copyWatch.textContent = '型番をコピー', 1200);
+  });
+}
