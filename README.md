@@ -26,3 +26,7 @@ GitHub Pages 靜態網站完整封包。
 - Added SHOW DRIVER full-screen cards to taxi-worthy routes.
 - Current cards: Katsuo Shokudo -> Starbucks Roastery; SMALL WORLDS -> Hontosaya delay backup; Kiyosumi -> RistoPizza delay backup.
 - Hotel-dependent taxi cards remain TBA until final hotel is confirmed.
+
+
+## v16.7
+Added Nakamura Tokichi matcha ORDER CARD for ミクスチャ［抹茶とミルク］ / 甘さ控えめ.

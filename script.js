@@ -178,3 +178,23 @@ document.querySelectorAll('.show-order').forEach(b=>b.addEventListener('click',o
 document.querySelectorAll('.order-close').forEach(b=>b.addEventListener('click',closeOrder));
 if(orderModal) orderModal.addEventListener('click',e=>{if(e.target===orderModal) closeOrder();});
 document.addEventListener('keydown',e=>{if(e.key==='Escape' && orderModal?.classList.contains('open')) closeOrder();});
+
+
+// v16.7 — Nakamura Tokichi Matcha Order Mode.
+const matchaOrderModal = document.getElementById('matchaOrderModal');
+function openMatchaOrder(){
+  if(!matchaOrderModal) return;
+  matchaOrderModal.classList.add('open');
+  matchaOrderModal.setAttribute('aria-hidden','false');
+  document.body.classList.add('modal-open');
+}
+function closeMatchaOrder(){
+  if(!matchaOrderModal) return;
+  matchaOrderModal.classList.remove('open');
+  matchaOrderModal.setAttribute('aria-hidden','true');
+  document.body.classList.remove('modal-open');
+}
+document.querySelectorAll('.show-matcha-order').forEach(b=>b.addEventListener('click',openMatchaOrder));
+document.querySelectorAll('.matcha-order-close').forEach(b=>b.addEventListener('click',closeMatchaOrder));
+if(matchaOrderModal) matchaOrderModal.addEventListener('click',e=>{if(e.target===matchaOrderModal) closeMatchaOrder();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape' && matchaOrderModal?.classList.contains('open')) closeMatchaOrder();});
