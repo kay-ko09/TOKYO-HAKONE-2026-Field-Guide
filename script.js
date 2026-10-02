@@ -198,3 +198,25 @@ document.querySelectorAll('.show-matcha-order').forEach(b=>b.addEventListener('c
 document.querySelectorAll('.matcha-order-close').forEach(b=>b.addEventListener('click',e=>{e.preventDefault();closeMatchaOrder();if(location.hash==='#matchaOrderModal') history.replaceState(null,'',location.pathname+location.search);}));
 if(matchaOrderModal) matchaOrderModal.addEventListener('click',e=>{if(e.target===matchaOrderModal) closeMatchaOrder();});
 document.addEventListener('keydown',e=>{if(e.key==='Escape' && matchaOrderModal?.classList.contains('open')) closeMatchaOrder();});
+
+// v16.9 — persistent 35mm film counter.
+(() => {
+  const wrap=document.getElementById('filmCounter');
+  const out=document.getElementById('filmCount');
+  const status=document.getElementById('filmStatus');
+  if(!wrap||!out||!status) return;
+  const key='tokyoHakoneFilmRolls';
+  let n=parseInt(localStorage.getItem(key) ?? '6',10);
+  if(!Number.isFinite(n)||n<0) n=6;
+  function render(){
+    out.textContent=n;
+    wrap.classList.toggle('low',n>0&&n<=2);
+    wrap.classList.toggle('empty',n===0);
+    status.textContent=n===0?'EMPTY · RESTOCK NOW':n<=2?'LOW FILM · RESTOCK AT NEXT CHANCE':n<=4?'WATCH SUPPLY · NEXT RESTOCK AVAILABLE':`READY · ${n} ROLLS REMAINING`;
+    localStorage.setItem(key,String(n));
+  }
+  document.getElementById('filmMinus')?.addEventListener('click',()=>{n=Math.max(0,n-1);render();});
+  document.getElementById('filmPlus')?.addEventListener('click',()=>{n+=1;render();});
+  document.getElementById('filmReset')?.addEventListener('click',()=>{n=6;render();});
+  render();
+})();
