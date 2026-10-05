@@ -71,3 +71,11 @@ v17.6: Added Yurakucho Marui venue recognition image beside KAGEMARU key visual,
 - OPEN UBER 使用 Uber rider app deep link，以目前位置為 pickup 並預填目的地。
 - 新增 10/26 渋谷 → Onitsuka Tiger 新宿為 Uber 救援路段。
 - 在台灣測試時請只確認 Uber App 能否開啟，不要確認叫車。
+
+
+## v17.9.2 — UBER UNIVERSAL LINK
+
+- OPEN UBER changed from legacy `uber://riderequest` to `https://m.uber.com/looking`.
+- Pickup uses `my_location`.
+- Destination uses Uber's `drop[0]` Location JSON with latitude, longitude, addressLine1 and addressLine2.
+- Intended for real-device mobile browser testing; do not confirm a ride during testing.

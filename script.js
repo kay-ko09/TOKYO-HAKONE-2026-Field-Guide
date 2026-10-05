@@ -137,15 +137,18 @@ function routeActionBar(route){
 }
 
 function uberDeepLink(name, address, lat, lng){
+  // Uber Universal Link for mobile websites.
+  // Official format uses current location for pickup and a JSON Location object for drop[0].
   const q = new URLSearchParams();
   q.set('pickup', 'my_location');
-  if(lat && lng){
-    q.set('dropoff[latitude]', lat);
-    q.set('dropoff[longitude]', lng);
-  }
-  q.set('dropoff[nickname]', name || address || 'Destination');
-  q.set('dropoff[formatted_address]', address || name || 'Destination');
-  return 'uber://riderequest?' + q.toString();
+  const drop = {
+    latitude: Number(lat),
+    longitude: Number(lng),
+    addressLine1: name || address || 'Destination',
+    addressLine2: address || name || 'Destination'
+  };
+  q.set('drop[0]', JSON.stringify(drop));
+  return 'https://m.uber.com/looking?' + q.toString();
 }
 
 // Driver card for Japanese taxi / destination confirmation.
@@ -168,7 +171,7 @@ document.querySelectorAll('.transit-block[data-driver-address]').forEach(route =
   bar.appendChild(btn);
 });
 
-// Uber app deep link. Uses current location as pickup and pre-fills destination.
+// Uber Universal Link. Uses current location as pickup and passes destination as a Location JSON object.
 document.querySelectorAll('.transit-block[data-uber-address]').forEach(route => {
   const bar = routeActionBar(route);
   const name = route.dataset.uberName || route.dataset.driverJp || route.dataset.driverName || '';
