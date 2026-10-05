@@ -118,7 +118,7 @@ if (copyWatch) {
   });
 }
 
-// v16.5 — Driver Mode for taxi-worthy routes only.
+// v17.9 — Taxi rescue tools: Uber deep link + Driver Card + Wallet.
 const driverModal = document.getElementById('driverModal');
 const driverJp = document.getElementById('driverJp');
 const driverName = document.getElementById('driverName');
@@ -126,11 +126,31 @@ const driverAddress = document.getElementById('driverAddress');
 const driverMap = document.getElementById('driverMap');
 let currentDriverAddress = '';
 
+function routeActionBar(route){
+  let bar = route.querySelector(':scope > .ride-actions');
+  if(!bar){
+    bar = document.createElement('div');
+    bar.className = 'ride-actions';
+    route.appendChild(bar);
+  }
+  return bar;
+}
+
+function uberDeepLink(name, address){
+  const q = new URLSearchParams();
+  q.set('pickup', 'my_location');
+  q.set('dropoff[nickname]', name || address || 'Destination');
+  q.set('dropoff[formatted_address]', address || '');
+  return 'uber://riderequest?' + q.toString();
+}
+
+// Driver card for Japanese taxi / destination confirmation.
 document.querySelectorAll('.transit-block[data-driver-address]').forEach(route => {
+  const bar = routeActionBar(route);
   const btn = document.createElement('button');
   btn.type = 'button';
   btn.className = 'driver-trigger';
-  btn.textContent = '司機に見せる / SHOW DRIVER';
+  btn.textContent = 'DRIVER CARD';
   btn.addEventListener('click', () => {
     currentDriverAddress = route.dataset.driverAddress || '';
     driverJp.textContent = route.dataset.driverJp || route.dataset.driverName || '';
@@ -141,7 +161,34 @@ document.querySelectorAll('.transit-block[data-driver-address]').forEach(route =
     driverModal?.setAttribute('aria-hidden','false');
     document.body.classList.add('modal-open');
   });
-  route.appendChild(btn);
+  bar.appendChild(btn);
+});
+
+// Uber app deep link. Uses current location as pickup and pre-fills destination.
+document.querySelectorAll('.transit-block[data-uber-address]').forEach(route => {
+  const bar = routeActionBar(route);
+  const name = route.dataset.uberName || route.dataset.driverJp || route.dataset.driverName || '';
+  const address = route.dataset.uberAddress || route.dataset.driverAddress || '';
+
+  const uber = document.createElement('a');
+  uber.className = 'uber-trigger';
+  uber.href = uberDeepLink(name, address);
+  uber.textContent = 'OPEN UBER';
+  uber.setAttribute('aria-label', `Open Uber to ${name}`);
+  bar.prepend(uber);
+
+  const wallet = document.createElement('a');
+  wallet.className = 'fare-trigger';
+  const qp = new URLSearchParams({
+    date: route.closest('.day-section')?.id === 'day4' ? '2026-10-26' : '2026-10-27',
+    category: 'TRANSPORT',
+    place: 'Uber / Taxi',
+    item: name,
+    source: 'field-guide'
+  });
+  wallet.href = 'wallet.html?' + qp.toString();
+  wallet.textContent = '¥ 記車資';
+  bar.appendChild(wallet);
 });
 
 function closeDriver(){

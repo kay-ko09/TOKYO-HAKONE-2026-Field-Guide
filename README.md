@@ -64,3 +64,10 @@ v17.6: Added Yurakucho Marui venue recognition image beside KAGEMARU key visual,
 - 正式加入 Onitsuka Tiger 新宿 Global Flagship（20:00 關門）。
 - 鳥茂改為 MUST GO / 現場候位 / 時間彈性，不再綁 19:30。
 - SHIBUYA SKY 不列入行程。
+
+
+## v17.9 — UBER DEEP LINK
+- Taxi Backup 路段新增 OPEN UBER / DRIVER CARD / ¥ 記車資三連按鈕。
+- OPEN UBER 使用 Uber rider app deep link，以目前位置為 pickup 並預填目的地。
+- 新增 10/26 渋谷 → Onitsuka Tiger 新宿為 Uber 救援路段。
+- 在台灣測試時請只確認 Uber App 能否開啟，不要確認叫車。
