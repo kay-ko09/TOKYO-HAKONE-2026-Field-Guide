@@ -297,3 +297,8 @@ body.modal-open{overflow:hidden}
 .night-view-mission{border-top-color:#455c70;background:linear-gradient(180deg,#fffdf9 0%,#f7f8f8 100%)}
 .mission-steps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;margin:12px 0}.mission-steps>div{position:relative;padding:11px 11px 10px 42px;border:1px solid var(--line);border-radius:9px;background:#faf8f3}.mission-steps span{position:absolute;left:11px;top:11px;display:flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:#455c70;color:#fff;font:800 9px/1 var(--font-ui)}.mission-steps b{display:block;font-size:12.5px;margin-bottom:3px}.mission-steps p{font-size:11.5px!important;line-height:1.55!important;margin:0!important}.night-view-mission .time{color:#455c70}
 @media(max-width:700px){.mission-steps{grid-template-columns:1fr;gap:5px}.mission-steps>div{padding:10px 10px 9px 39px}.mission-steps span{left:9px;top:9px}.mission-steps b{font-size:12px}.mission-steps p{font-size:11px!important}}
+/* v17.8 user-supplied mission imagery + Kenyan order card */
+.order-card{margin-top:10px;padding:12px 13px;border:1px solid rgba(91,74,119,.22);border-radius:10px;background:#f3eef7}
+.order-card>b{display:block;font:700 9.5px/1.2 var(--font-ui);letter-spacing:.08em;color:var(--purple);margin-bottom:7px}
+.order-card p{margin:0!important;font-size:13px!important;line-height:1.65!important;font-weight:600!important}
+.order-card small{display:block;margin-top:7px;font-size:10.5px;color:#5b565f}
