@@ -261,3 +261,12 @@ document.querySelectorAll('.card .content').forEach(content => {
     if (seen.has(key)) a.remove(); else seen.add(key);
   });
 });
+
+// v17.8.1 Kenyan order card
+const kenyanOrderModal = document.getElementById('kenyanOrderModal');
+function openKenyanOrder(){if(!kenyanOrderModal)return;kenyanOrderModal.classList.add('open');kenyanOrderModal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';}
+function closeKenyanOrder(){if(!kenyanOrderModal)return;kenyanOrderModal.classList.remove('open');kenyanOrderModal.setAttribute('aria-hidden','true');document.body.style.overflow='';}
+document.querySelectorAll('.show-kenyan-order').forEach(b=>b.addEventListener('click',openKenyanOrder));
+document.querySelectorAll('.kenyan-order-close').forEach(b=>b.addEventListener('click',closeKenyanOrder));
+if(kenyanOrderModal) kenyanOrderModal.addEventListener('click',e=>{if(e.target===kenyanOrderModal)closeKenyanOrder();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&kenyanOrderModal?.classList.contains('open'))closeKenyanOrder();});
