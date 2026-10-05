@@ -55,3 +55,12 @@ v17.6: Added Yurakucho Marui venue recognition image beside KAGEMARU key visual,
 - Fix duplicate action buttons, especially duplicate `¥ 記帳`.
 - Expense links are now generated from one source only.
 - Added defensive de-duplication so legacy hand-authored controls do not reappear after refresh.
+
+
+## v17.7 — 10/26 Night Route Refresh
+- NEWoMan 高輪加入 Takanawa Night View Mission：North 4F Milk Tea Service → LUFTBAUM 28F 公共庭園。
+- 正式加入 LAMMFROMM（Scramble Square 5F）與 Godzilla Store Shibuya（PARCO 6F）。
+- Kenyan Shibuya 改為 IF TIME，為晚間第一順位可砍項。
+- 正式加入 Onitsuka Tiger 新宿 Global Flagship（20:00 關門）。
+- 鳥茂改為 MUST GO / 現場候位 / 時間彈性，不再綁 19:30。
+- SHIBUYA SKY 不列入行程。
