@@ -136,11 +136,15 @@ function routeActionBar(route){
   return bar;
 }
 
-function uberDeepLink(name, address){
+function uberDeepLink(name, address, lat, lng){
   const q = new URLSearchParams();
   q.set('pickup', 'my_location');
+  if(lat && lng){
+    q.set('dropoff[latitude]', lat);
+    q.set('dropoff[longitude]', lng);
+  }
   q.set('dropoff[nickname]', name || address || 'Destination');
-  q.set('dropoff[formatted_address]', address || '');
+  q.set('dropoff[formatted_address]', address || name || 'Destination');
   return 'uber://riderequest?' + q.toString();
 }
 
@@ -169,10 +173,12 @@ document.querySelectorAll('.transit-block[data-uber-address]').forEach(route => 
   const bar = routeActionBar(route);
   const name = route.dataset.uberName || route.dataset.driverJp || route.dataset.driverName || '';
   const address = route.dataset.uberAddress || route.dataset.driverAddress || '';
+  const lat = route.dataset.uberLat || '';
+  const lng = route.dataset.uberLng || '';
 
   const uber = document.createElement('a');
   uber.className = 'uber-trigger';
-  uber.href = uberDeepLink(name, address);
+  uber.href = uberDeepLink(name, address, lat, lng);
   uber.textContent = 'OPEN UBER';
   uber.setAttribute('aria-label', `Open Uber to ${name}`);
   bar.prepend(uber);
