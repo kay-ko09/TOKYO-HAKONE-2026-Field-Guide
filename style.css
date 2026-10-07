@@ -320,3 +320,11 @@ body.modal-open{overflow:hidden}
 
 /* v18.0 — Seijo Ishii route stops */
 .seijo-card{border-top:4px solid #6d8061}.seijo-card.best{background:#fbfcf8}.seijo-card.nearby{border-top-color:#9a8d70}.seijo-options{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:11px}.seijo-options>div{border:1px solid var(--line);background:#f8f6f1;border-radius:10px;padding:11px}.seijo-options b,.seijo-options span{display:block}.seijo-options b{font-size:12px;margin-bottom:4px}.seijo-options span{font-size:11px;color:var(--muted);line-height:1.55;margin-bottom:8px}.seijo-options a{display:inline-block;text-decoration:none;border-bottom:1px solid #9baa91;margin-right:10px;font-size:9px;font-weight:700}.seijo-overview{border-top:4px solid var(--green)}.seijo-route-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:11px}.seijo-route-list>div{border:1px solid var(--line);background:#f8f6f1;border-radius:10px;padding:11px}.seijo-route-list span,.seijo-route-list b,.seijo-route-list em{display:block}.seijo-route-list span{font-size:9px;color:var(--purple);font-weight:700}.seijo-route-list b{font-size:13px;margin:2px 0}.seijo-route-list em{font-size:10px;color:var(--green);font-style:normal;font-weight:700}@media(max-width:700px){.seijo-options,.seijo-route-list{grid-template-columns:1fr}.seijo-options>div,.seijo-route-list>div{padding:10px}.seijo-options b{font-size:12px}.seijo-options span{font-size:10.5px}}
+
+/* v19.0 — MUJI × 3COINS route shopping */
+.shopping-overview{border-top:4px solid #7a7468}
+.shopping-route-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:11px}
+.shopping-route-list>div{display:flex;flex-direction:column;gap:3px;padding:10px 11px;border:1px solid rgba(30,30,30,.12);border-radius:10px;background:rgba(255,255,255,.58)}
+.shopping-route-list span{font-size:.72rem;letter-spacing:.08em;opacity:.7}.shopping-route-list b{font-size:.92rem}.shopping-route-list em{font-size:.76rem;font-style:normal;opacity:.76}
+.route-shop{border-top:4px solid #7a7468}.route-shop.best{background:#fcfbf7}.route-shop.nearby{border-top-color:#a69a83}.muji-card{border-top-color:#7f2828}.coins-card{border-top-color:#b28b34}
+@media(max-width:700px){.shopping-route-list{grid-template-columns:1fr}}
