@@ -344,3 +344,73 @@ body.modal-open{overflow:hidden}
 .icon-route-list>div{display:flex;flex-direction:column;gap:3px;padding:10px;border:1px solid #d7d7d2;border-radius:10px;background:#fafaf7}
 .icon-route-list span{font-size:10px;letter-spacing:.06em;color:#777}.icon-route-list b{font-size:12px}.icon-route-list em{font-size:10px;color:#666;font-style:normal}
 @media(max-width:700px){.icon-strip{grid-template-columns:1fr}.icon-strip img{height:190px}.icon-photo img{height:210px}.icon-route-list{grid-template-columns:1fr}}
+
+/* v21.1 — mobile-first ICON / PHOTO HUNT: compact recognition images, no aggressive crop */
+.icon-strip figure,.icon-photo{border:1px solid var(--line);background:#f3f1ec}
+.icon-strip img,.icon-photo img{object-fit:contain;background:#ece9e3}
+
+@media(max-width:700px){
+  /* Multi-icon stops become a thumb-friendly horizontal rail instead of three tall stacked cards. */
+  .icon-strip{
+    display:flex;
+    gap:8px;
+    overflow-x:auto;
+    scroll-snap-type:x mandatory;
+    overscroll-behavior-x:contain;
+    -webkit-overflow-scrolling:touch;
+    margin:10px -11px 10px;
+    padding:0 11px 5px;
+    scrollbar-width:none;
+  }
+  .icon-strip::-webkit-scrollbar{display:none}
+  .icon-strip figure{
+    flex:0 0 72%;
+    scroll-snap-align:start;
+    border-radius:9px;
+  }
+  .icon-strip img{
+    width:100%;
+    height:118px;
+    object-fit:contain;
+  }
+  .icon-strip figcaption{
+    min-height:34px;
+    padding:6px 7px;
+    font-size:8.5px;
+    line-height:1.35;
+  }
+
+  /* Single landmark photos are recognition thumbnails, not hero images. */
+  .icon-photo{
+    margin:9px 0 8px;
+    border-radius:9px;
+  }
+  .icon-photo img{
+    width:100%;
+    height:145px;
+    object-fit:contain;
+  }
+  .icon-photo figcaption{
+    padding:6px 7px;
+    font-size:8.5px;
+    line-height:1.35;
+  }
+
+  /* Keep the Nara Yoshitomo reference compact too. */
+  .icon-hunt-card .photo-cinematic img,
+  .day-section#day5 .photo-cinematic img[src*="azabudai-nara"]{
+    height:150px;
+    object-fit:contain;
+    background:#ece9e3;
+  }
+
+  .icon-badges{gap:4px;margin-top:7px}
+  .icon-badges span{font-size:8px;padding:4px 6px}
+}
+
+@media(max-width:390px){
+  .icon-strip figure{flex-basis:78%}
+  .icon-strip img{height:104px}
+  .icon-photo img{height:128px}
+  .day-section#day5 .photo-cinematic img[src*="azabudai-nara"]{height:136px}
+}
