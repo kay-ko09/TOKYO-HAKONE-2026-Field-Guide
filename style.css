@@ -328,3 +328,19 @@ body.modal-open{overflow:hidden}
 .shopping-route-list span{font-size:.72rem;letter-spacing:.08em;opacity:.7}.shopping-route-list b{font-size:.92rem}.shopping-route-list em{font-size:.76rem;font-style:normal;opacity:.76}
 .route-shop{border-top:4px solid #7a7468}.route-shop.best{background:#fcfbf7}.route-shop.nearby{border-top-color:#a69a83}.muji-card{border-top-color:#7f2828}.coins-card{border-top-color:#b28b34}
 @media(max-width:700px){.shopping-route-list{grid-template-columns:1fr}}
+
+/* v21 — ICONS / PHOTO HUNT */
+.icon-hunt-card{border-top:4px solid #30383b;background:linear-gradient(180deg,#fbfbf9 0%,#f5f5f1 100%)}
+.icon-hunt-card .time{letter-spacing:.08em}
+.icon-strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:12px 0}
+.icon-strip figure,.icon-photo{margin:0;overflow:hidden;border-radius:12px;background:#e9e9e5}
+.icon-strip img,.icon-photo img{display:block;width:100%;height:150px;object-fit:cover}
+.icon-strip figcaption,.icon-photo figcaption{padding:7px 9px;font-size:10px;letter-spacing:.05em;line-height:1.35;color:#555}
+.icon-photo img{height:220px}
+.icon-badges{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0 3px}
+.icon-badges span{font-size:10px;font-weight:800;letter-spacing:.06em;padding:5px 8px;border:1px solid #bbb;border-radius:999px;background:#fff}
+.icon-overview{border-top:4px solid #30383b}
+.icon-route-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:11px}
+.icon-route-list>div{display:flex;flex-direction:column;gap:3px;padding:10px;border:1px solid #d7d7d2;border-radius:10px;background:#fafaf7}
+.icon-route-list span{font-size:10px;letter-spacing:.06em;color:#777}.icon-route-list b{font-size:12px}.icon-route-list em{font-size:10px;color:#666;font-style:normal}
+@media(max-width:700px){.icon-strip{grid-template-columns:1fr}.icon-strip img{height:190px}.icon-photo img{height:210px}.icon-route-list{grid-template-columns:1fr}}
