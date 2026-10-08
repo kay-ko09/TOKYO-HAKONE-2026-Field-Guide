@@ -414,3 +414,15 @@ body.modal-open{overflow:hidden}
   .icon-photo img{height:128px}
   .day-section#day5 .photo-cinematic img[src*="azabudai-nara"]{height:136px}
 }
+
+
+/* v24.9 — itinerary priority hierarchy */
+.priority-legend{display:flex;gap:6px;overflow:auto;margin:8px 0 12px;padding:0 2px;scrollbar-width:none}.priority-legend span{flex:0 0 auto;padding:5px 8px;border-radius:999px;font-size:9px;color:#6d665f;background:#f5f1ea;border:1px solid #ded6cc}.priority-legend b{margin-right:3px;font-size:10px}.priority-legend .lg-s{border-color:#a89883;background:#fffdf8}.priority-legend .lg-a{border-color:#d4b98e;background:#fffaf0}.priority-legend .lg-b{border-color:#ddd8d1;background:#f6f4f0}
+.day-section article.card.priority-s,.day-section article.card.priority-a,.day-section article.card.priority-b{position:relative}
+.day-section article.card.priority-s{background:#fffdf8;border:1px solid #b9aa96;border-left:5px solid #796d60;box-shadow:0 3px 10px rgba(64,52,40,.055)}
+.day-section article.card.priority-a{background:#fffaf1;border:1px solid #e1d3bd;border-left:4px solid #b28b58}
+.day-section article.card.priority-b{background:#f7f5f1;border:1px solid #e4dfd8;box-shadow:none}
+.priority-badge{float:right;display:grid;place-items:center;width:24px;height:24px;margin:0 0 5px 8px;border-radius:50%;font:800 10px/1 "IBM Plex Mono",monospace}
+.priority-s .priority-badge{background:#f0ebe3;border:1px solid #9d8d79;color:#5f554a}.priority-a .priority-badge{background:#f7ead6;border:1px solid #c5a26f;color:#8a673b}.priority-b .priority-badge{width:21px;height:21px;background:#eeebe6;border:1px solid #d2ccc4;color:#817970}
+.priority-b .content h3{font-size:.94em}.priority-b .content>p{color:#777069}.inline-route-note{display:grid;grid-template-columns:auto 1fr;gap:7px;align-items:center;margin:-4px 8px 10px;padding:7px 9px;border:1px dashed #d8d0c6;border-radius:9px;background:#faf8f4;color:#69625b}.inline-route-note b{font-size:9px;white-space:nowrap}.inline-route-note span{font-size:9px;line-height:1.45}
+@media(max-width:420px){.priority-legend{margin-bottom:9px}.day-section article.card.priority-b{margin-top:7px;margin-bottom:7px}.inline-route-note{margin-left:4px;margin-right:4px}}

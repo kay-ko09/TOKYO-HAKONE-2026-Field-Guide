@@ -24,3 +24,12 @@
 .route-extra{display:grid;grid-template-columns:1fr;gap:2px;margin:6px 0;padding:7px 9px;border:1px dashed #d7cfc5;border-radius:8px;background:#f8f6f2;color:#5f5953}
 .route-extra b{font-size:10px}.route-extra small{font-size:9px;line-height:1.4;color:#7a736c}.route-extra.film{border-left:3px solid #7d766e}
 @media(max-width:390px){.place.priority-s{padding:11px 9px 11px 10px}.place.priority-a{padding:10px 7px}.route-extra{padding:6px 8px}}
+
+
+/* v24.9 — softer route priority hierarchy; remove sticker-like black S cards */
+.place.priority-s{background:#fffdf8;color:var(--ink);border:1px solid #b9aa96;border-left:5px solid #796d60;border-radius:10px;margin:6px 0;padding:11px 8px;box-shadow:0 2px 8px rgba(64,52,40,.05)}
+.place.priority-s:before{background:#f0ebe3;color:#5f554a;border:1px solid #9d8d79}
+.place.priority-s small{color:#6f675f}.place.priority-s .exit{background:#f0ede8;color:#4d4945}
+.place.priority-a{background:#fffaf1;border-color:#e1d3bd;border-left-color:#b28b58}
+.place.priority-a:before{color:#8a673b}
+.route-extra,.mini span{background:#f7f5f1}.route-extra{border-style:solid;border-color:#e3ddd5}.route-extra.film{border-left:3px solid #9b8d7d}
