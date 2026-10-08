@@ -451,3 +451,41 @@ body.modal-open{overflow:hidden}
 .route-stop-stack .b-stop{margin:0}
 .route-shop-stop summary small{white-space:nowrap}
 @media(max-width:420px){.actions{gap:4px!important}.actions a,.actions button{min-height:29px!important;padding:6px 9px!important}.b-stop .actions a{min-height:27px!important}}
+
+/* v25.5 — compact actions + aligned day headers */
+.actions{
+  display:flex!important;
+  flex-wrap:nowrap!important;
+  gap:6px!important;
+  overflow-x:auto!important;
+  padding-bottom:2px!important;
+  scrollbar-width:none;
+  -webkit-overflow-scrolling:touch;
+}
+.actions::-webkit-scrollbar{display:none}
+.actions a,.actions button{
+  flex:0 0 auto!important;
+  min-width:0!important;
+  min-height:30px!important;
+  padding:6px 9px!important;
+  border-radius:7px!important;
+  white-space:nowrap!important;
+  font-size:9px!important;
+  letter-spacing:.01em!important;
+}
+.actions a.map{font-weight:800!important}
+.actions a.map:before{content:"⌖"!important;margin-right:4px!important;font-size:10px!important}
+.actions a:not(.map)[target="_blank"]:after{content:"↗"!important;margin-left:4px!important;font-size:8px!important}
+.day-focus-icons{display:flex;gap:6px;overflow-x:auto;margin:-6px 0 12px;padding:0 1px 3px;scrollbar-width:none}
+.day-focus-icons::-webkit-scrollbar{display:none}
+.day-focus-icons span{flex:0 0 auto;border:1px solid #ddd6cd;border-radius:999px;background:#faf8f4;padding:5px 8px;font:650 8.5px/1.1 var(--font-ui);color:#665f58;white-space:nowrap}
+.day-section#day5 .mission-cover{padding-top:14px!important;padding-bottom:14px!important}
+.day-section#day5 .mission-cover-copy h2{font-size:clamp(28px,6vw,46px)!important;line-height:1.02!important}
+.day-section#day5 .mission-cover-copy p{font-size:9px!important;letter-spacing:.035em!important;word-spacing:.12em}
+.day-section#day5 .today-brief{background:#f4f0ea!important;border-color:#ddd6cd!important}
+@media(max-width:600px){
+  .actions{gap:5px!important;margin-top:8px!important}
+  .actions a,.actions button{min-height:29px!important;padding:6px 8px!important;font-size:8.8px!important}
+  .day-section#day5 .mission-cover-copy h2{font-size:28px!important}
+  .day-focus-icons span{font-size:8px;padding:5px 7px}
+}
