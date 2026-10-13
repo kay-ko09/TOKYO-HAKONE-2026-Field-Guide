@@ -1,0 +1,20 @@
+/* v40 — consistent compact route language for Oct 26 & Oct 27 */
+#day4 .transit-block,#day5 .transit-block{margin:8px 0 16px;border:1px solid #e3dfd8;border-radius:14px;background:#fbfaf8;box-shadow:none;overflow:hidden}
+#day4 .transit-block:before,#day5 .transit-block:before{content:"ROUTE / 移動";display:block;padding:11px 16px 0;font:700 11px/1.3 "Noto Sans TC",sans-serif;letter-spacing:.07em;color:#706080}
+#day4 .transit-block>summary,#day5 .transit-block>summary{position:relative;display:block;list-style:none;padding:10px 46px 15px 16px;font:700 15px/1.5 "Noto Sans TC",sans-serif;color:#272c28;cursor:pointer;overflow-wrap:anywhere}
+#day4 .transit-block>summary::-webkit-details-marker,#day5 .transit-block>summary::-webkit-details-marker{display:none}
+#day4 .transit-block>summary span,#day5 .transit-block>summary span{display:inline-block;min-width:53px;color:#706080;font:700 14px/1.5 "Noto Sans TC",sans-serif}
+#day4 .transit-block>summary:after,#day5 .transit-block>summary:after{content:"+";position:absolute;right:16px;top:10px;float:none;font:400 24px/1.3 sans-serif}
+#day4 .transit-block[open]>summary:after,#day5 .transit-block[open]>summary:after{content:"−"}
+#day4 .transit-block[open]>summary,#day5 .transit-block[open]>summary{border-bottom:1px solid #e6e2dc}
+#day4 .route-steps,#day5 .route-steps{display:block;margin:0 16px}
+#day4 .route-steps>div,#day5 .route-steps>div{display:grid;grid-template-columns:70px minmax(0,1fr);gap:3px 10px;padding:13px 0;border-bottom:1px solid #e6e2dc}
+#day4 .route-steps small,#day5 .route-steps small{grid-row:1/3;align-self:start;font:700 10px/1.5 "Noto Sans TC",sans-serif;letter-spacing:.03em;color:#706080}
+#day4 .route-steps b,#day5 .route-steps b{grid-column:2;margin:0!important;font:700 14px/1.5 "Noto Sans TC",sans-serif;color:#272c28}
+#day4 .route-steps p,#day5 .route-steps p{grid-column:2;margin:0!important;font:400 13px/1.65 "Noto Sans TC",sans-serif!important;color:#65615f!important}
+#day4 .route-meta,#day5 .route-meta{padding:11px 16px;display:flex;gap:8px;flex-wrap:wrap}
+#day4 .route-meta span,#day5 .route-meta span{font:500 12px/1.5 "Noto Sans TC",sans-serif}
+#day4 .unified-route-links{display:flex;flex-wrap:wrap;gap:8px;padding:0 16px 15px}
+#day4 .unified-route-links a{display:inline-flex;align-items:center;border-radius:8px;padding:9px 11px;background:#efede8;color:#28302a;text-decoration:none;font:600 12px/1.5 "Noto Sans TC",sans-serif}
+#day4 .today-brief,#day5 .today-brief{display:none!important}
+@media(max-width:600px){#day4 .transit-block,#day5 .transit-block{margin:8px 0 14px}#day4 .transit-block>summary,#day5 .transit-block>summary{font-size:14px}#day4 .route-steps b,#day5 .route-steps b{font-size:13px}}
