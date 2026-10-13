@@ -1,0 +1,12 @@
+
+/* v30 essential information restoration */
+.stay-panel,.essential-route{margin:18px 0;padding:20px 17px;background:#fff;border:1px solid #dedbd2;border-radius:16px;color:#252923;box-shadow:0 4px 18px rgba(20,20,20,.035)}
+.stay-panel h3,.essential-route h3{margin:6px 0 8px;font-size:1.18rem;line-height:1.45;letter-spacing:.01em}
+.stay-panel p,.essential-route p{margin:8px 0;line-height:1.65;font-size:.9rem}
+.stay-kicker{font:600 .69rem/1.4 system-ui,sans-serif;letter-spacing:.11em;color:#7b796f}
+.stay-links{display:flex;gap:8px;flex-wrap:wrap;margin-top:13px}
+.stay-links a{display:inline-flex;align-items:center;min-height:42px;padding:9px 12px;border-radius:9px;background:#eeeee9;color:#27352f!important;text-decoration:none;font-size:.84rem;font-weight:650}
+.stay-detail{color:#66665f;font-size:.81rem!important}
+.essential-route ol{padding-left:1.35rem;margin:13px 0}.essential-route li{padding-left:4px;margin:11px 0;line-height:1.65;font-size:.89rem}
+.hotel-shortcut{padding:12px 16px;text-align:right}.hotel-shortcut a{color:#424b45;font-size:.85rem;text-decoration:underline;text-underline-offset:4px}
+@media(min-width:720px){.stay-panel,.essential-route{padding:26px 30px}.essential-route ol{max-width:800px}}
