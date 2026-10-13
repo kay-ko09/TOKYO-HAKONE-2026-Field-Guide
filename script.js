@@ -326,3 +326,23 @@ document.querySelectorAll('.show-kenyan-order').forEach(b=>b.addEventListener('c
 document.querySelectorAll('.kenyan-order-close').forEach(b=>b.addEventListener('click',closeKenyanOrder));
 if(kenyanOrderModal) kenyanOrderModal.addEventListener('click',e=>{if(e.target===kenyanOrderModal)closeKenyanOrder();});
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&kenyanOrderModal?.classList.contains('open'))closeKenyanOrder();});
+
+// v26 independent reading modes: full details vs field-use essentials.
+(function(){
+  const full=document.getElementById('planView'),go=document.getElementById('goView'),extras=document.getElementById('extrasView');
+  if(!full||!go||!extras)return;
+  let mode=localStorage.getItem('tokyo-v26-mode')==='go'?'go':'full';
+  let showExtras=false;
+  function render(){
+    document.body.classList.toggle('go-focus',mode==='go');
+    document.body.classList.toggle('show-extras',showExtras);
+    full.classList.toggle('selected',mode==='full');go.classList.toggle('selected',mode==='go');
+    full.setAttribute('aria-pressed',String(mode==='full'));go.setAttribute('aria-pressed',String(mode==='go'));
+    extras.hidden=mode!=='go';extras.classList.toggle('selected',showExtras);
+    extras.setAttribute('aria-pressed',String(showExtras));extras.textContent=showExtras?'隱藏順路點':'顯示順路點';
+  }
+  full.addEventListener('click',()=>{mode='full';localStorage.setItem('tokyo-v26-mode',mode);render()});
+  go.addEventListener('click',()=>{mode='go';localStorage.setItem('tokyo-v26-mode',mode);render()});
+  extras.addEventListener('click',()=>{showExtras=!showExtras;render()});
+  render();
+})();
