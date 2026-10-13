@@ -18,6 +18,9 @@ document.querySelectorAll('.checklist input[type="checkbox"]').forEach((box, idx
   box.addEventListener('change', () => localStorage.setItem(key, box.checked ? '1' : '0'));
 });
 
+// Travel mode removed for simpler reading; reset previous stored preference.
+localStorage.removeItem('tokyo-travel-mode');
+document.body.classList.remove('travel-mode');
 // Travel mode toggle. Script now loads after the button, so this always binds correctly.
 const travelBtn = document.getElementById('travelMode');
 if (travelBtn) {
