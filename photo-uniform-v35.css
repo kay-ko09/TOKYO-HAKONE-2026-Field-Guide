@@ -1,0 +1,40 @@
+/* v35: consistent image rhythm for itinerary cards. Originals untouched. */
+@media (max-width: 900px) {
+  article.card .content > figure,
+  article.card .content > .editorial-photo,
+  article.card .content > .photo-wide,
+  article.card .content > .photo-food,
+  article.card .content > .photo-small,
+  article.card .content > .photo-cinematic,
+  article.card .content > .photo-portrait,
+  article.card .content > .photo-poster,
+  article.card .content > .eva-photo,
+  article.card .content > .venue-photo {
+    width:100%!important;max-width:none!important;
+    margin:10px 0 12px!important;
+    border-radius:10px!important;overflow:hidden!important;
+  }
+  article.card .content > figure img,
+  article.card .content > .editorial-photo img,
+  article.card .content > .eva-photo img,
+  article.card .content > .venue-photo img {
+    display:block!important;width:100%!important;
+    height:auto!important;aspect-ratio:16 / 10!important;
+    max-height:none!important;object-fit:cover!important;
+  }
+  /* Posters: same outer frame, show entire artwork without cropping. */
+  article.card .content > .photo-poster img,
+  article.card .content > figure.photo-poster img {
+    object-fit:contain!important;background:#232323!important;
+  }
+  /* Paired images have equal height and matching alignment. */
+  article.card .kagemaru-visual-pair {align-items:stretch!important;}
+  article.card .kagemaru-visual-pair figure {width:100%!important;max-width:none!important;margin:0!important;}
+  article.card .kagemaru-visual-pair figure img {width:100%!important;height:auto!important;aspect-ratio:16 / 10!important;max-height:none!important;object-fit:cover!important;}
+  article.card .kagemaru-visual-pair figure.photo-poster img {object-fit:contain!important;background:#232323!important;}
+}
+@media (min-width:901px) {
+  article.card .content > figure {max-width:100%!important;width:100%!important;}
+  article.card .content > figure img {width:100%!important;height:auto!important;aspect-ratio:16 / 10!important;max-height:none!important;object-fit:cover!important;}
+  article.card .content > figure.photo-poster img {object-fit:contain!important;background:#232323!important;}
+}
