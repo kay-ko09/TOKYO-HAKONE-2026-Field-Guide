@@ -317,3 +317,14 @@ body.modal-open{overflow:hidden}
 .ride-actions .driver-trigger:before{content:"🇯🇵 ";margin-right:2px}
 .ride-actions .fare-trigger{background:#eef1e9;color:#33412f;border:1px solid #cfd8c9}
 @media(max-width:390px){.ride-actions{gap:4px;margin-left:8px;margin-right:8px}.ride-actions .uber-trigger,.ride-actions .driver-trigger,.ride-actions .fare-trigger{font-size:9px;padding:7px 3px}}
+
+/* v37 matcha 1+1 mobile order card */
+.matcha-intro{font-size:13px;line-height:1.65;color:#666;margin:0 0 13px}
+.matcha-pair{background:#f5f5ef;border:1px solid #d9dfd0;border-radius:12px;padding:15px;margin:10px 0}
+.matcha-pair-number{color:#46633e;font-size:13px;font-weight:800;letter-spacing:.08em}
+.matcha-pair-number span{font-size:10px;margin-left:8px;color:#6d7965}
+.matcha-pair h3{font-size:20px;line-height:1.35;margin:7px 0}
+.matcha-zh{font-size:13px;color:#666;margin:5px 0 10px}
+.matcha-jp{background:white;border-radius:8px;padding:12px;font-size:16px;line-height:1.7;color:#222;margin:0}
+.matcha-order-summary{border-top:1px solid #ddd;margin-top:15px;padding:14px 0 4px}
+.matcha-order-summary strong{font-size:12px;color:#46633e}.matcha-order-summary p{font-size:16px;line-height:1.75;margin:7px 0}
