@@ -1,0 +1,15 @@
+/* v34 — one visual system across the guide and Tokyo map */
+.guide-tools{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));width:100%;background:#f7f6f2;border-bottom:1px solid #dedbd2;gap:0;position:relative;z-index:10}
+.guide-tools a{min-width:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;padding:10px 1px;color:#303430;text-decoration:none;border-right:1px solid #e6e3dc;font:600 11px/1.2 'Noto Sans TC',sans-serif;white-space:nowrap}
+.guide-tools a:last-child{border-right:0}.guide-tools b{font:700 18px/1 'Noto Sans TC',sans-serif;color:#5f7768}.guide-tools a[aria-current=page]{background:#e9e8e1;border-bottom:2px solid #323a33}.guide-tools a:active{background:#e5e6dd}
+.hotel-shortcut{display:none!important}.route-strip{display:none!important}
+@media(max-width:700px){.guide-tools a{font-size:10px;padding:11px 0 10px}.guide-tools b{font-size:17px}.hero{min-height:0}.hero-copy{padding:16px 16px 14px}.eyebrow{margin:0 0 6px}.hero h1{font-size:clamp(30px,8vw,42px);line-height:1.05}.subtitle{margin:6px 0 0}.day-nav{position:relative;top:auto}}
+/* map page follows the same editorial header & navigation */
+body:has(#map){background:#f7f6f2;color:#252b27}
+body:has(#map)>header{max-width:none;background:#e9e8e1;padding:18px 20px 16px;border-bottom:1px solid #d8d6cc}
+body:has(#map) .map-eyebrow{font-size:11px;font-weight:650;letter-spacing:.14em;color:#666d66}
+body:has(#map) header h1{font-size:clamp(30px,8vw,42px);line-height:1.08;font-weight:800;letter-spacing:-.04em;margin:8px 0 5px}
+body:has(#map) .map-subtitle{font-size:12px;letter-spacing:.12em;color:#6e746e;margin:0}
+body:has(#map) .tabs{padding-top:16px}
+body:has(#map) .tab.active{background:#292e29;border-color:#292e29}
+@media(max-width:700px){body:has(#map)>header{padding:16px}body:has(#map) #map{height:53vh;min-height:330px}}
