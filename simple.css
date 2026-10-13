@@ -1,0 +1,48 @@
+
+/* v29 — restrained, mobile-first editorial skin over the original site */
+:root {--simple-bg:#f8f7f3;--simple-ink:#222722;}
+html {scroll-behavior:smooth}
+body {background:var(--simple-bg)!important;color:var(--simple-ink)!important;font-family:"Noto Sans TC",system-ui,sans-serif!important;font-size:15px;line-height:1.6}
+.hero {min-height:0!important;height:auto!important;padding:26px 20px 22px!important;background:#e9e7df!important;border-bottom:1px solid #dcdad3!important}
+.hero-shade {display:none!important}
+.hero-copy {position:static!important;transform:none!important;padding:0!important;max-width:1040px!important;margin:auto!important;color:#232923!important}
+.hero .eyebrow {font-size:10px!important;letter-spacing:.13em!important;color:#60665e!important;margin:0 0 7px!important}
+.hero h1 {font-size:clamp(26px,7vw,39px)!important;line-height:1.05!important;letter-spacing:-.03em!important;margin:0!important;color:#242824!important;text-shadow:none!important}
+.hero h1 br {display:none!important}
+.hero h1 span {color:inherit!important}
+.hero .subtitle {font-size:11px!important;letter-spacing:.06em!important;margin:9px 0 0!important;color:#676b64!important}
+.day-nav {position:sticky!important;top:0!important;z-index:60!important;display:flex!important;gap:5px!important;overflow-x:auto!important;overscroll-behavior-x:contain!important;scrollbar-width:none!important;background:#f8f7f3f5!important;border-bottom:1px solid #e3e1d9!important;padding:8px max(12px,calc((100vw - 900px)/2))!important;box-shadow:none!important}
+.day-nav::-webkit-scrollbar {display:none}
+.day-nav .day-btn,.day-nav .film-nav-link {flex:0 0 auto!important;min-width:66px!important;min-height:48px!important;border-radius:10px!important;box-shadow:none!important;padding:7px 9px!important;border:1px solid transparent!important;background:transparent!important;color:#50564e!important}
+.day-nav .day-btn.active {background:#292f29!important;color:white!important;border-color:#292f29!important}
+.day-nav .day-btn b,.day-nav .film-nav-link b {font-size:14px!important}
+.day-nav .day-btn span,.day-nav .film-nav-link span {font-size:10px!important}
+main {max-width:900px!important;margin:0 auto!important;padding:0 13px 40px!important}
+.day-section {padding-top:15px!important}
+.mission-cover {min-height:0!important;height:auto!important;border-radius:12px!important;padding:18px 15px!important;margin:0 0 12px!important;background:#e8e8e0!important;box-shadow:none!important;border:1px solid #e0ded5!important}
+.mission-cover::before,.mission-cover::after {display:none!important}
+.mission-cover-copy {position:static!important;padding:0!important;color:#242824!important;text-shadow:none!important}
+.mission-cover-copy span {font-size:11px!important;color:#6b6f67!important}
+.mission-cover-copy h2 {font-size:clamp(19px,5vw,27px)!important;line-height:1.3!important;margin:5px 0 0!important;color:#252b25!important;text-shadow:none!important}
+.mission-cover-copy p {display:none!important}
+.today-brief {padding:9px 3px!important;background:transparent!important;border:0!important;box-shadow:none!important;margin:0 0 10px!important}
+.today-brief b {font-size:10px!important;letter-spacing:.08em!important;color:#7b8079!important}
+.today-brief p {font-size:13px!important;margin:3px 0!important;line-height:1.6!important}
+article.card {display:grid!important;grid-template-columns:56px minmax(0,1fr)!important;gap:10px!important;background:#fff!important;border:1px solid #e9e7df!important;border-radius:13px!important;box-shadow:none!important;padding:14px 12px!important;margin:0 0 9px!important;overflow:hidden!important}
+article.card .time {width:auto!important;min-width:0!important;padding:3px 0!important;margin:0!important;background:transparent!important;border:0!important;color:#73786f!important;font-size:11px!important;letter-spacing:0!important;line-height:1.5!important;word-break:break-word!important}
+article.card .content {min-width:0!important;width:auto!important;padding:0!important;margin:0!important}
+article.card h3 {font-size:16px!important;line-height:1.4!important;letter-spacing:-.01em!important;margin:0 0 6px!important;color:#252b25!important}
+article.card p {font-size:12px!important;line-height:1.6!important;color:#6a7068!important;margin:0 0 8px!important}
+article.card figure {max-width:100%!important;width:100%!important;margin:10px 0!important;border-radius:10px!important;overflow:hidden!important;background:#eeede7!important;box-shadow:none!important}
+article.card figure img {display:block!important;width:100%!important;max-width:100%!important;object-fit:cover!important;height:auto!important;max-height:270px!important}
+article.card figure.photo-small,.card figure.reference {max-width:65%!important}
+article.card .actions {display:flex!important;flex-wrap:wrap!important;gap:7px!important;margin:10px 0 0!important}
+article.card .actions a {display:inline-flex!important;align-items:center!important;justify-content:center!important;min-height:37px!important;padding:8px 12px!important;border-radius:9px!important;box-shadow:none!important;font-size:12px!important;line-height:1.3!important}
+article.card .actions a.map {background:#29312b!important;color:white!important}
+.quick-info,.delay-note,.route-meta,.route-steps {font-size:12px!important;line-height:1.55!important}
+.quick-info {padding:8px 10px!important;border-radius:8px!important;background:#f7f7f3!important}
+details.transit-block {margin:7px 0!important;border:1px solid #e8e6df!important;border-radius:9px!important;background:#fafaf7!important;box-shadow:none!important}
+details.transit-block summary {padding:10px!important;font-size:12px!important;line-height:1.5!important}
+details.b-stop {border-radius:10px!important;background:#fff!important;border:1px solid #e9e7df!important;box-shadow:none!important;margin:7px 0!important}
+details.b-stop summary {padding:11px!important;font-size:13px!important}
+@media(max-width:520px){main{padding:0 10px 36px!important}.hero{padding:22px 15px 19px!important}article.card{grid-template-columns:49px minmax(0,1fr)!important;padding:12px 10px!important;gap:8px!important}article.card h3{font-size:15px!important}article.card figure img{max-height:220px!important} .day-nav{padding:7px 9px!important}}
