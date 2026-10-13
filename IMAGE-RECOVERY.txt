@@ -1,0 +1,39 @@
+Original image assets present: 9
+Missing original paths (35):
+assets/images/arakurayama.webp
+assets/images/bluebottle.webp
+assets/images/butter.webp
+assets/images/fuglen.webp
+assets/images/glitch.webp
+assets/images/godzilla-daiba.webp
+assets/images/harry-potter-harajuku-mobile.webp
+assets/images/hontosaya.webp
+assets/images/iwana.webp
+assets/images/kagemaru.webp
+assets/images/kameju.webp
+assets/images/katsuo.webp
+assets/images/kenyan-shibuya-mobile.webp
+assets/images/kusamochi.webp
+assets/images/lakeashi.webp
+assets/images/lammfromm-mobile.webp
+assets/images/luftbaum-night-mobile.webp
+assets/images/nact.webp
+assets/images/oishi-kokia.webp
+assets/images/onitsuka-shinjuku-mobile.webp
+assets/images/oshino-village.webp
+assets/images/owakudani.webp
+assets/images/ristopizza.webp
+assets/images/senbei.webp
+assets/images/smallworlds.webp
+assets/images/starbucks.webp
+assets/images/teamlab.webp
+assets/images/tokyotower.webp
+assets/images/torii-fuji.webp
+assets/images/torishige.webp
+assets/images/tsujita.webp
+assets/images/watch-stpx107-clerk.webp
+assets/images/watch-stpx107.webp
+assets/images/yamaharu.webp
+assets/images/yurakucho-marui-mobile.webp
+
+To restore: copy matching originals into assets/images/ then restore img tags from v25.7 index.html.
